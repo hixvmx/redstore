@@ -15,6 +15,7 @@
     --text-color-secondary: rgb(55 65 81 / 62%);
     --bg-color-primary: #f1f1f1;
     --bg-color-secondary: #ffffff;
+    --border-color-primary:rgba(228, 228, 231, 1);
 
     /*========== Font Add Typography ==========*/
     /* .5rem = 8px | 1rem = 16px ... */
