@@ -71,3 +71,7 @@ Route::controller(AccountController::class)->group(function() {
 Route::controller(SearchController::class)->group(function() {
     Route::get('/search', 'ShowSearchPage');
 });
+
+
+// call dashboard routes
+require __DIR__.'/dashboard.php';
