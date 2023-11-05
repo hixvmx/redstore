@@ -1,0 +1,83 @@
+.favorites {
+    background-color: var(--bg-color-secondary);
+    border-radius: 4px;
+}
+
+.favorites__row {
+    padding: 1rem;
+}
+
+.ads__slide {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: .5rem;
+}
+
+.ad {
+    background-color: var(--bg-color-secondary);
+    border-radius: 4px;
+}
+
+.ad__row {
+    padding: .5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.ad__image img {
+    border-radius: 4px;
+    width: 100%;
+}
+
+.ad__title {
+    margin: 6px 0;
+}
+
+.ad__title h3 {
+    font-size: 13px;
+    color: var(--text-color-primary);
+    -webkit-line-clamp: 1;
+    display: block !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.href {
+    cursor: pointer;
+}
+
+.href:hover .ad__title h3 {
+    color: var(--first-color);
+}
+
+.ad__price b {
+    color: var(--first-color);
+    cursor: context-menu;
+}
+
+.favorite__btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: .5rem;
+    border-radius: 50%;
+    background-color: rgb(255 255 255 / 100%);
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.favorite__btn svg {
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+.favorite__btn svg path {
+    stroke: var(--first-color);
+}
+
+.favorite__btn:hover svg path {
+    stroke: var(--text-color-secondary);
+}

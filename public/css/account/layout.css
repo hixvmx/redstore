@@ -1,0 +1,49 @@
+.main {
+    min-height: 100vh;
+}
+
+.settings__container {
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-gap: 1rem;
+}
+
+.aside__head,
+.content__head {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(228, 228, 231, 1);
+    font-weight: 700;
+}
+
+.settings__aside__row {
+    background-color: var(--bg-color-secondary);
+    border-radius: 4px;
+}
+
+.settings__aside__links {
+    padding: 0.5rem;
+}
+
+.aside__link {
+    background-color: var(--bg-color-secondary);
+    padding: 1rem 0.5rem;
+    border-radius: 4px;
+}
+
+.aside__link span {
+    font-size: small;
+    color: var(--text-color-secondary);
+}
+
+.aside__link:hover span {
+    color: var(--first-color);
+}
+
+.active__link {
+    background-color: var(--bg-color-primary);
+}
+
+.active__link:hover span {
+    color: var(--text-color-primary);
+}

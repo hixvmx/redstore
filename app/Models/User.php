@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Country;
+use App\Models\City;
 
 class User extends Authenticatable
 {
@@ -18,9 +20,21 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'firstname',
+        'lastname',
+        'username',
         'email',
         'password',
+        'avatar',
+        'country',
+        'city',
+        'birthdate',
+        'gender',
+        'phone_number',
+        'twitter_url',
+        'instagram_url',
+        'facebook_url',
+        'website_url',
     ];
 
     /**
@@ -42,4 +56,39 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    
+
+    public function getAvatarAttribute()
+    {
+        $imgPath = $this->attributes['avatar'];
+        $appUrl = \Config::get('values.APP_URL');
+        $defaultAvatar = \Config::get('values.DEFAULT_AVATAR');
+        
+        if (!empty($imgPath))
+        {
+            return $appUrl ."image/avatar/". $imgPath;
+        }
+
+        return $defaultAvatar;
+    }
+
+
+    public function getCountryAttribute()
+    {
+        $countryID = $this->attributes['country'];
+        
+        $country = Country::select('id', 'name', 'slug')->where('id', $countryID)->first();
+
+        return $country;
+    }
+
+
+    public function getCityAttribute()
+    {
+        $cityID = $this->attributes['city'];
+        
+        $city = City::select('id', 'name', 'slug')->where('id', $cityID)->first();
+
+        return $city;
+    }
 }

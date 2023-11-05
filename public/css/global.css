@@ -1,0 +1,189 @@
+@font-face {
+    font-family: 'Noto Naskh Arabic';
+    src:
+        url('../fonts/Noto_Naskh_Arabic/static/NotoNaskhArabic-Bold.ttf') format('truetype'),
+        url('../fonts/Noto_Naskh_Arabic/static/NotoNaskhArabic-Medium.ttf') format('truetype'),
+        url('../fonts/Noto_Naskh_Arabic/static/NotoNaskhArabic-Regular.ttf') format('truetype'),
+        url('../fonts/Noto_Naskh_Arabic/static/NotoNaskhArabic-SemiBold.ttf') format('truetype');
+}
+:root {
+    /*========== Colors ==========*/
+    /* Color mode HSL(hue, saturation, lightness) */
+    --first-color: #f23d3d;
+    --title-color: rgba(24,24,27,1);
+    --text-color-primary: rgba(55,65,81,1);
+    --text-color-secondary: rgb(55 65 81 / 62%);
+    --bg-color-primary: #f1f1f1;
+    --bg-color-secondary: #ffffff;
+
+    /*========== Font Add Typography ==========*/
+    /* .5rem = 8px | 1rem = 16px ... */
+    --body-font: 'Noto Naskh Arabic', serif;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 0.875rem;
+    --small-font-size: 0.675rem;
+    --smaller-font-size: 0.613rem;
+
+    /*========== Font Weight ==========*/
+    --font-medium : 500;
+    --font-semibold : 600;
+    --font-bold : 700;
+    
+    /*========== Box Shadow ==========*/
+    --shadow: 0px 5px 20px 0px rgb(69 67 96 / 10%);
+
+    /*========== Boredr Radius ==========*/
+    --border-radius: 20px;
+}
+
+/* Responsive typography */
+@media screen and (max-width: 1024px) {
+    :root {
+        --h1-font-size: 1.75rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1rem;
+        --normal-font-size: 0.938rem;
+        --small-font-size: 0.813rem;
+        --smaller-font-size: 0.75rem;
+    }
+}
+
+/*============== ScrollBar ==============*/
+/* ::-webkit-scrollbar {width: 6px;}
+::-webkit-scrollbar-track {background: #f1f1f1;}
+::-webkit-scrollbar-thumb {background: #c5c5c5;}
+::-webkit-scrollbar-thumb:hover {background: #787878;} */
+
+/*============== Base ==============*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    direction: rtl;
+    background-color: var(--bg-color-primary);
+    color: var(--text-color-primary);
+    line-height: 1.25rem;
+}
+
+h1, h2, h3 {
+    color: var(--title-color);
+    font-weight: var(--font-semibold);
+    line-height: 2rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: var(--text-color-primary);
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+body,
+button,
+input,
+textarea,
+select,
+option {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+input, select, option, textarea {
+    color: var(--text-color-secondary);
+}
+
+.main {
+    min-height: 60vh;
+}
+
+.wd__100 {
+    width: 100%;
+}
+
+.wd__80 {
+    width: 80%;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.aic__jcs {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aic {
+    align-items: center;
+}
+
+.jcs {
+    justify-content: space-between;
+}
+
+.main__header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.main__header a, .main__header span {
+    margin-left: 10px;
+    color: rgba(156,163,175,1);
+}
+
+.main__header span {
+    cursor: context-menu;
+}
+
+.main__header a:hover {
+    color: var(--text-color-primary);
+}
+
+
+/* #############  Media Sizes  ############# */
+@media only screen and (max-width: 1200px) {
+    .wd__80{width:85%;}
+}
+@media only screen and (max-width: 1000px) {
+    .wd__80{width:90%;}
+}
+@media only screen and (max-width: 900px) {
+	.wd__80{width:95%;}
+}
+@media only screen and (max-width: 768px) {
+	.wd__80{width:100%;}
+    .main{padding: 0px 10px;}
+}
+@media only screen and (max-width: 600px) {
+	
+}

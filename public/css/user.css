@@ -1,0 +1,239 @@
+.user__page {
+    margin: 3rem 0;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-gap: 1rem;
+}
+
+/* User Informations */
+.informations {
+    background-color: var(--bg-color-secondary);
+    padding: 1rem;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.more__info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.more__info table td,
+.more__info table th {
+    padding: 5px 0;
+}
+
+.user__img {
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-color: #eee;
+}
+
+.user__img img {
+    width: 100%;
+    height: 100%;
+}
+
+.user__names {
+    margin: .5rem auto 0rem auto;
+    width: fit-content;
+}
+
+.user__names h3 {
+    font-size: medium;
+}
+
+.social__icons {
+    margin: .5rem auto 1.5rem auto;
+    cursor: context-menu;
+    text-align: center;
+}
+
+.social__icons div {
+    margin: 0 0.5rem;
+    display: inline-block;
+}
+
+.social__icons button {
+    border-radius: 50%;
+    transition: 0.3s;
+    width: 33px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social__icons button:hover {
+    box-shadow: var(--shadow);
+    transform: scale(1.3);
+}
+
+.social__icons button svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.contact__btn {
+    margin: .5rem auto auto auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__btn button {
+    background-color: #52b035;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.contact__btn button:hover {
+    background-color: #4b9f31;
+}
+
+/* more info */
+.more__info {
+    border-top: 1px solid rgba(228, 228, 231, 1);
+    background-color: var(--bg-color-secondary);
+    padding: 1rem;
+    border-radius: 0px 0px 4px 4px;
+    color: var(--text-color-secondary);
+}
+
+.more__info table tr td a {
+    color: var(--text-color-secondary);
+    text-decoration: underline;
+}
+
+.more__info table tr td a:hover {
+    color: var(--first-color);
+}
+
+/* share page */
+.share__page {
+    background-color: var(--bg-color-secondary);
+    margin-top: 1rem;
+    border-radius: 4px;
+}
+
+.share__page__head {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(228, 228, 231, 1);
+}
+
+.share__page__row {
+    padding: 0.5rem;
+    cursor: context-menu;
+    text-align: center;
+}
+
+.share__page__row div {
+    display: inline-block;
+}
+
+.share__page__row button {
+    margin: 0.5rem;
+    background-color: #eee;
+    border-radius: 50%;
+    transition: 0.3s;
+    width: 33px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.share__page__row button:hover {
+    box-shadow: var(--shadow);
+    transform: scale(1.3);
+}
+
+.share__page__row button svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+/* User Ads */
+.ads__slide {
+    background-color: var(--bg-color-secondary);
+    padding: 1rem;
+    border-radius: 4px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+.ad {
+    background-color: var(--bg-color-secondary);
+    border-radius: 4px;
+}
+
+.ad__row {
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.ad__image img {
+    border-radius: 4px;
+    width: 100%;
+}
+
+.ad__title {
+    margin: 6px 0 0 0;
+}
+
+.ad__title h3 {
+    font-size: 13px;
+    color: var(--text-color-primary);
+    -webkit-line-clamp: 1;
+    display: block !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.href {
+    cursor: pointer;
+}
+
+.href:hover .ad__title h3 {
+    color: var(--first-color);
+}
+
+.favorite__btn {
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    padding: .5rem;
+    border-radius: 50%;
+    background-color: rgb(255 255 255 / 100%);
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.favorite__btn svg {
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+.favorite__btn svg path {
+    stroke: var(--text-color-secondary);
+}
+
+.favorite__btn:hover svg path {
+    stroke: var(--first-color);
+}
+
+.ad__row:hover .favorite__btn {
+    opacity: 1;
+    top: .5rem;
+    right: .5rem;
+}
