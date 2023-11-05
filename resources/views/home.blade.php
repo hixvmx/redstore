@@ -20,7 +20,7 @@ function getSubCategoriesx($categoryID)
 ?>
 @extends('layout.master')
 @section('metatags')
-    <title>RedBox</title>
+    <title>redStore</title>
     <link rel="stylesheet" href="{{ asset('css/components/header.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/components/footer.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/components/home_content.css') }}" />
