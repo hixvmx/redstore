@@ -142,7 +142,7 @@
                         <div class="s_ad__row">
                             <a href="/ad" class="href">
                                 <div class="s_ad__image">
-                                    <img src="/image/ad/placeholder.png" alt="" />
+                                    <img src="/image/default.png" alt="" />
                                 </div>
                                 <div class="s_ad__title">
                                     <h3 title="title">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،</h3>
@@ -167,7 +167,7 @@
                         <div class="s_ad__row">
                             <a href="/ad" class="href">
                                 <div class="s_ad__image">
-                                    <img src="/image/ad/placeholder.png" alt="" />
+                                    <img src="/image/default.png" alt="" />
                                 </div>
                                 <div class="s_ad__title">
                                     <h3 title="title">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،</h3>
@@ -192,7 +192,7 @@
                         <div class="s_ad__row">
                             <a href="/ad" class="href">
                                 <div class="s_ad__image">
-                                    <img src="/image/ad/placeholder.png" alt="" />
+                                    <img src="/image/default.png" alt="" />
                                 </div>
                                 <div class="s_ad__title">
                                     <h3 title="title">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،</h3>
@@ -217,7 +217,7 @@
                         <div class="s_ad__row">
                             <a href="/ad" class="href">
                                 <div class="s_ad__image">
-                                    <img src="/image/ad/placeholder.png" alt="" />
+                                    <img src="/image/default.png" alt="" />
                                 </div>
                                 <div class="s_ad__title">
                                     <h3 title="title">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،</h3>
@@ -242,7 +242,7 @@
                         <div class="s_ad__row">
                             <a href="/ad" class="href">
                                 <div class="s_ad__image">
-                                    <img src="/image/ad/placeholder.png" alt="" />
+                                    <img src="/image/default.png" alt="" />
                                 </div>
                                 <div class="s_ad__title">
                                     <h3 title="title">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،</h3>
