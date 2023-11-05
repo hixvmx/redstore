@@ -52,6 +52,13 @@
                                         </div>
                                     </a>
                                 </div>
+                                @if ($authUser->isAdmin == 1)
+                                <a class="a" href='/dashboard'>
+                                    <div>
+                                        <span>لوحة التحكم</span>
+                                    </div>
+                                </a>
+                                @endif
                                 <a class="a" href={{'/user' .'/'. $authUser->username}}>
                                     <div>
                                         <span>حسابي</span>
