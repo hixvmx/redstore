@@ -1,0 +1,42 @@
+.db__header {
+    margin-bottom: 0.5rem;
+}
+
+.db__body {
+    background-color: var(--bg-color-secondary);
+    border-radius:4px;
+    border: 1px solid var(--border-color-primary);
+    box-shadow: var(--shadow);
+}
+
+.db__body__header {
+    border-bottom: 1px solid var(--border-color-primary);
+}
+
+.db__body__header ul {
+    cursor: context-menu;
+}
+
+.db__body__header ul li {
+    display: inline-block;
+}
+
+.db__body__header ul li label {
+    border-left: 1px solid var(--border-color-primary);
+    padding: 1rem 1rem 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.db__body__header ul li label b {
+    font-size: var(--h3-font-size);
+    line-height: normal;
+}
+
+.db__body__header ul li label span {
+    color: var(--text-color-secondary);
+}
+
+.db__body__content {
+    padding: 1rem;
+}
