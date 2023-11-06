@@ -10,4 +10,9 @@ class DashboardController extends Controller
     {
         return view('dashboard/home');
     }
+
+    public function show_accounts()
+    {
+        return view('dashboard/accounts');
+    }
 }

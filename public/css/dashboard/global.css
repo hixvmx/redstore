@@ -6,6 +6,8 @@
 
 /* ################################################################### Aside ################################################################### */
 .dashboard__aside {
+    position: sticky;
+    top: 0;
     height: 100vh;
     overflow-y: auto;
     background-color: var(--bg-color-secondary);
@@ -71,6 +73,8 @@
 
 /* ################################################################### Header ################################################################### */
 .dashboard__header {
+    position: sticky;
+    top: 0;
     height: 60px;
     display: flex;
     align-items: center;

@@ -1,0 +1,171 @@
+.db__header {
+    margin-bottom: 0.5rem;
+}
+
+.db__body {
+    background-color: var(--bg-color-secondary);
+    border-radius: 4px;
+    border: 1px solid var(--border-color-primary);
+}
+
+#accounts {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#accounts td,
+#accounts th {
+    padding: 1rem;
+}
+
+#accounts tr {
+    border-bottom: 1px solid var(--border-color-primary);
+}
+
+#accounts th {
+    color: var(--text-color-primary);
+    text-align: right;
+}
+
+#accounts td {
+    color: var(--text-color-secondary);
+}
+
+.user__data {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.user__data:hover .user__info p {
+    color: var(--first-color);
+}
+
+.user__avatar {
+    margin-left: 8px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user__avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+.user__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user__info span {
+    font-size: var(--small-font-size);
+}
+
+.user__info p {
+    font-weight: var(--font-bold);
+}
+
+.user__info span,
+.user__info p {
+    font-family: system-ui;
+}
+
+.settings__dropdown {
+    width: fit-content;
+    position: relative;
+}
+
+.dropdown__btn {
+    background-color: transparent;
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+}
+
+.dropdown__btn svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--text-color-secondary);
+    vertical-align: middle;
+}
+
+.dropdown__btn:hover svg {
+    fill: var(--text-color-primary);
+}
+
+#accounts tr:hover .dropdown__btn {
+    background-color: #f1f2f3;
+}
+
+.dropdown__menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+
+.dropdown__menu__body {
+    background-color: var(--bg-color-secondary);
+    box-shadow: var(--shadow);
+    padding: 8px;
+    border-radius: 4px;
+    width: 200px;
+    max-height: 70vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown__menu__body button {
+    padding: 0.4rem;
+    border-radius: 4px;
+    color: var(--text-color-secondary);
+}
+
+.dropdown__menu__body button:hover {
+    background-color: var(--bg-color-primary);
+}
+
+.settings__dropdown:hover .dropdown__menu {
+    display: block;
+}
+
+/* Pagination */
+.pagination {
+    margin: 1rem 0 2rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination span {
+    color: var(--text-color-secondary);
+    cursor: context-menu;
+    font-size: var(--small-font-size);
+}
+
+.pagination ul {
+    cursor: context-menu;
+}
+
+.pagination ul li {
+    display: inline-block;
+}
+
+.pagination ul li div {
+    background: var(--bg-color-secondary);
+    border: 1px solid var(--border-color-primary);
+    padding: 0.3rem 1.5rem;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.pagination ul li a div {
+    color: var(--text-color-secondary);
+}
+
+.pagination ul li div:hover {
+    box-shadow: var(--shadow);
+}
