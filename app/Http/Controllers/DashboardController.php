@@ -15,4 +15,19 @@ class DashboardController extends Controller
     {
         return view('dashboard/accounts');
     }
+
+    public function show_ads()
+    {
+        return view('dashboard/ads');
+    }
+
+    public function show_categories()
+    {
+        return view('dashboard/categories');
+    }
+
+    public function show_countries()
+    {
+        return view('dashboard/countries');
+    }
 }
