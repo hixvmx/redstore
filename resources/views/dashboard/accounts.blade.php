@@ -30,7 +30,7 @@
                         @foreach ($users as $user)
                             <tr>
                                 <td>
-                                    <div class="user__data" onclick="alert('ok...');">
+                                    <div class="user__data" onclick="window.open('/user/{{$user->username}}', '_blank')">
                                         <div class="user__avatar">
                                             <img src="{{$user->avatar}}" alt="{{$user->firstname .' '. $user->lastname}}" />
                                         </div>
