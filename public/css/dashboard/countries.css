@@ -1,5 +1,39 @@
 .db__header {
     margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.filterOptions {
+    display: flex;
+    gap: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--bg-color-secondary);
+    border: 1px solid var(--border-color-primary);
+    padding: 4px;
+}
+
+.filterOptions button {
+    display: flex;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.filterOptions .active {
+    background: #eee;
+}
+
+.filterOptions button svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--text-color-secondary);
+    vertical-align: middle;
+}
+
+.filterOptions button:hover {
+    background: #eee;
 }
 
 .db__body {
@@ -14,21 +48,28 @@
     width: 100%;
 }
 
-#countries td,
-#countries th {
+#countries .td,
+#countries .th {
     padding: 0.5rem;
 }
 
-#countries tr {
+#countries .tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     border-bottom: 1px solid var(--border-color-primary);
 }
 
-#countries th {
+#countries .tr .title {
+    display: flex;
+    align-items: center;
+}
+
+#countries .th {
     color: var(--text-color-primary);
     text-align: right;
 }
 
-#countries td {
+#countries .td {
     color: var(--text-color-secondary);
 }
 
