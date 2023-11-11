@@ -189,3 +189,28 @@
 .pagination ul li div:hover {
     box-shadow: var(--shadow);
 }
+
+/* Add New Category */
+.addNewBtn {
+    position: fixed;
+    bottom: 1rem;
+    z-index: 10;
+    display: flex;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #52b035;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+
+.addNewBtn svg {
+    width: 22px;
+    height: 22px;
+    fill: #fff;
+    vertical-align: middle;
+}
+
+.addNewBtn:hover {
+    opacity: 0.9;
+}

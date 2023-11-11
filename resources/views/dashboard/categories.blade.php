@@ -137,6 +137,12 @@
             <span>الصفحة رقم 1 من أصل 21</span>
         </div>
     </div>
+
+    {{-- Add New Category --}}
+    <div class="addNewBtn">
+        <svg viewBox="0 0 20 20" fill="none"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g> <path fill-rule="evenodd" d="M9 17a1 1 0 102 0v-6h6a1 1 0 100-2h-6V3a1 1 0 10-2 0v6H3a1 1 0 000 2h6v6z"></path> </g></svg>
+    </div>
+
     <script>
         var onlyParentsBtn = document.getElementById('onlyParentsBtn');
         var ParentsAndChildrensBtn = document.getElementById('ParentsAndChildrensBtn');
