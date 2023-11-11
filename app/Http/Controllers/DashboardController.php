@@ -8,6 +8,7 @@ use App\Models\SubCategory;
 use App\Models\Country;
 use App\Models\City;
 use App\Models\User;
+use App\Models\Ad;
 
 
 class DashboardController extends Controller
@@ -20,13 +21,15 @@ class DashboardController extends Controller
     public function show_accounts()
     {
         $users = User::latest()->paginate(25);
-        // return $users;
+        
         return view('dashboard/accounts', compact('users'));
     }
 
     public function show_ads()
     {
-        return view('dashboard/ads');
+        $ads = Ad::latest()->paginate(25);
+        
+        return view('dashboard/ads', compact('ads'));
     }
 
     public function show_categories()
