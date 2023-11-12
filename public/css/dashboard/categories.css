@@ -214,3 +214,194 @@
 .addNewBtn:hover {
     opacity: 0.9;
 }
+
+.model__box {
+    background: rgb(0 0 0 / 70%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: opacityAnimation;
+    animation-duration: .4s;
+}
+
+@keyframes opacityAnimation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.closeBtn {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+    display: flex;
+}
+
+.closeBtn svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--text-color-secondary);
+    transition: 0.3s;
+}
+
+.closeBtn:hover svg {
+    transform: scale(1.3);
+    fill: var(--first-color);
+}
+
+.modal__form {
+    background-color: var(--bg-color-secondary);
+    box-shadow: var(--shadow);
+    border-radius: 4px;
+    width: 500px;
+    animation-name: zoomInAnimation;
+    animation-duration: .4s;
+}
+
+@keyframes zoomInAnimation {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+}
+
+.form__header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color-primary);
+}
+
+.form__header h3 {
+    font-size: var(--normal-font-size);
+    line-height: unset;
+}
+
+.form__body {
+    padding: 1rem;
+}
+
+.input__group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input__group input,
+.input__group select {
+    padding: 8px 10px;
+    outline: none;
+    margin: 6px 0;
+    border-radius: 4px;
+    background-color: rgba(228, 228, 231, 0.4);
+    border: 1px solid rgba(228, 228, 231, 0.7);
+    transition: 0.3s;
+}
+
+.input__group input:hover,
+.input__group select:hover {
+    border: 1px solid rgba(228, 228, 231, 1);
+}
+
+.input__group input:focus,
+.input__group select:focus {
+    border: 1px solid var(--first-color);
+}
+
+.input__group label,
+.input__group select {
+    cursor: context-menu;
+}
+
+.input__group span {
+    font-size: var(--small-font-size);
+    color: #f23d3d;
+    cursor: context-menu;
+}
+
+.input__group__type {
+    display: inline-block;
+}
+
+.input__group__type label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    padding-right: 0;
+    outline: none;
+    margin: 6px 0px 0px 6px;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.input__group__type input {
+    cursor: pointer;
+}
+
+.input__group__type label i {
+    cursor: pointer;
+    font-style: normal;
+    margin-right: 4px;
+}
+
+.imagePreview {
+    margin-left: 8px;
+    border-radius: 4px;
+    background: var(--bg-color-primary);
+    width: 100px;
+    height: 100px;
+    display: none;
+}
+
+.uploadImageBtn {
+    display: flex;
+    padding: 10px;
+    border-radius: 4px;
+    background: var(--bg-color-primary);
+    border: 1px solid var(--border-color-primary);
+    width: fit-content;
+}
+
+.uploadImageBtn svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--text-color-secondary);
+    vertical-align: middle;
+}
+
+.uploadImageBtn:hover svg {
+    fill: var(--text-color-primary);
+}
+
+.input__btn {
+    margin-top: 1rem;
+}
+
+.input__btn button {
+    padding: 8px 2rem;
+    border-radius: 4px;
+    font-weight: var(--font-bold);
+    background-color: var(--first-color);
+    color: #ffffff;
+}
+
+.input__btn button:hover {
+    opacity: 0.9;
+}
+
+.input__btn button:disabled,
+.input__btn button[disabled] {
+    background-color: #cd2d2d;
+    cursor: context-menu;
+}
+
+.input__btn button:disabled:hover,
+.input__btn button[disabled]:hover {
+    opacity: 1;
+}
