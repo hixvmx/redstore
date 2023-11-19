@@ -3,6 +3,8 @@
     <title>Categories - RedStore</title>
     <link rel="stylesheet" href="{{ asset('css/dashboard/global.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/dashboard/categories.css') }}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <script src="{{ asset('js/useAxios.js') }}"></script>
 @endsection
 
 @section('content')
@@ -70,66 +72,138 @@
                 <div class="form__header">
                     <h3>إضافة تصنيف جديد</h3>
                 </div>
-                <div class="form__body">
+                <form id="submitForm" method="POST" enctype="multipart/form-data">
+                    <div class="form__body">
                     
-                    <div class="input__group__type">
-                        <label for="type1">
-                            <input name="type" id="type1" type="radio" onchange="changeCategoryType()" checked />
-                            <i>رئيسي</i>
-                        </label>
-                    </div>
-
-                    <div class="input__group__type">
-                        <label for="type2">
-                            <input name="type" id="type2" type="radio" onchange="changeCategoryType()" />
-                            <i>فرعي</i>
-                        </label>
-                    </div>
-
-                    <div class="input__group">
-                        <input name="title" id="title" type="text" autocomplete="off" placeholder="" />
-                        <span class="err" id="title-error" style="display: none;"></span>
-                    </div>
-
-                    <div id="mainCategorySection" style="display: none;">
-                        <div class="input__group">
-                            <select name="category" id="category">
-                                <option value="">التصنيف الرئيسي</option>
-                                @if (count($categories) > 0)
-                                    @foreach ($categories as $category)
-                                        @if ($category->isParent == true)
-                                            <option value="{{$category['id']}}">{{$category['name']}}</option>
-                                        @endif
-                                    @endforeach
-                                @endif
-                            </select>
-                            <span class="err" id="category-error" style="display: none;"></span>
-                        </div>
-                    </div>
-
-                    <div class="input__group">
-                        <input name="image" id="categoryImage" type="file" accept="image/jpeg, image/png, image/jpg" hidden />
-                        <div class="flex" style="align-items: end;margin: 6px 0;">
-                            <img src="" class="imagePreview" id="previewImage" />
-                            <label class="uploadImageBtn" for="categoryImage" style="cursor: pointer;">
-                                <svg viewBox="0 0 16.00 16.00"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g> <path d="m 4 1 c -1.644531 0 -3 1.355469 -3 3 v 1 h 1 v -1 c 0 -1.109375 0.890625 -2 2 -2 h 1 v -1 z m 2 0 v 1 h 4 v -1 z m 5 0 v 1 h 1 c 1.109375 0 2 0.890625 2 2 v 1 h 1 v -1 c 0 -1.644531 -1.355469 -3 -3 -3 z m -5 4 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m -5 1 v 4 h 1 v -4 z m 13 0 v 4 h 1 v -4 z m -4.5 2 l -2 2 l -1.5 -1 l -2 2 v 0.5 c 0 0.5 0.5 0.5 0.5 0.5 h 7 s 0.472656 -0.035156 0.5 -0.5 v -1 z m -8.5 3 v 1 c 0 1.644531 1.355469 3 3 3 h 1 v -1 h -1 c -1.109375 0 -2 -0.890625 -2 -2 v -1 z m 13 0 v 1 c 0 1.109375 -0.890625 2 -2 2 h -1 v 1 h 1 c 1.644531 0 3 -1.355469 3 -3 v -1 z m -8 3 v 1 h 4 v -1 z m 0 0"></path> </g></svg>
+                        <div class="input__group__type">
+                            <label for="type1">
+                                <input name="type" id="type1" type="radio" onchange="changeCategoryType()" checked />
+                                <i>رئيسي</i>
                             </label>
                         </div>
-                        <span class="err" id="image-error" style="display: none;"></span>
-                    </div>
-                    
+    
+                        <div class="input__group__type">
+                            <label for="type2">
+                                <input name="type" id="type2" type="radio" onchange="changeCategoryType()" />
+                                <i>فرعي</i>
+                            </label>
+                        </div>
+    
+                        <div class="input__group">
+                            <input name="title" id="title" type="text" autocomplete="off" placeholder="" />
+                            <span class="err" id="title-error" style="display: none;"></span>
+                        </div>
+    
+                        <div id="mainCategorySection" style="display: none;">
+                            <div class="input__group">
+                                <select name="category" id="category">
+                                    <option value="">التصنيف الرئيسي</option>
+                                    @if (count($categories) > 0)
+                                        @foreach ($categories as $category)
+                                            @if ($category->isParent == true)
+                                                <option value="{{$category['id']}}">{{$category['name']}}</option>
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                </select>
+                                <span class="err" id="category-error" style="display: none;"></span>
+                            </div>
+                        </div>
+    
+                        <div class="input__group">
+                            <input name="image" id="image" type="file" accept="image/jpeg, image/png, image/jpg" hidden />
+                            <div class="flex" style="align-items: end;margin: 6px 0;">
+                                <img src="" class="imagePreview" id="previewImage" />
+                                <label class="uploadImageBtn" for="categoryImage" style="cursor: pointer;">
+                                    <svg viewBox="0 0 16.00 16.00"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g> <path d="m 4 1 c -1.644531 0 -3 1.355469 -3 3 v 1 h 1 v -1 c 0 -1.109375 0.890625 -2 2 -2 h 1 v -1 z m 2 0 v 1 h 4 v -1 z m 5 0 v 1 h 1 c 1.109375 0 2 0.890625 2 2 v 1 h 1 v -1 c 0 -1.644531 -1.355469 -3 -3 -3 z m -5 4 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m -5 1 v 4 h 1 v -4 z m 13 0 v 4 h 1 v -4 z m -4.5 2 l -2 2 l -1.5 -1 l -2 2 v 0.5 c 0 0.5 0.5 0.5 0.5 0.5 h 7 s 0.472656 -0.035156 0.5 -0.5 v -1 z m -8.5 3 v 1 c 0 1.644531 1.355469 3 3 3 h 1 v -1 h -1 c -1.109375 0 -2 -0.890625 -2 -2 v -1 z m 13 0 v 1 c 0 1.109375 -0.890625 2 -2 2 h -1 v 1 h 1 c 1.644531 0 3 -1.355469 3 -3 v -1 z m -8 3 v 1 h 4 v -1 z m 0 0"></path> </g></svg>
+                                </label>
+                            </div>
+                            <span class="err" id="image-error" style="display: none;"></span>
+                        </div>
+                        
 
-                    <div class="input__btn">
-                        <button type="submit" id="submitButton">
-                            حفظ
-                        </button>
+                        <div id="results" style="display: none;"></div>
+    
+                        <div class="input__btn">
+                            <button type="submit" id="submitButton">
+                                حفظ
+                            </button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
 
     <script>
+        var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        var submitForm = document.getElementById("submitForm");
+        var submitButton = document.getElementById("submitButton");
+
+
+        submitForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var formData = new FormData();
+
+            formData.append("title", document.querySelector("#title").value);
+            formData.append("category", document.querySelector("#category").value);
+            formData.append("image", document.querySelector("#image").files[0]);
+
+
+            async function sendRequest() {
+                try {
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = 'جاري الإرسال...';
+
+                    const response = await axios.post('/createCategory', formData, {
+                        headers : {
+                            "X-CSRF-TOKEN": csrfToken
+                        }
+                    })
+
+                    const data = await response.data;
+
+                    console.log('data',data)
+
+                    if (data.status == 1) {
+                        const resultsElement = document.getElementById("result");
+                        resultsElement.innerHTML = '<p style="color: green;">' + data.result + '</p>';
+                        resultsElement.style.display = 'block';
+                    }
+
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = "حفظ";
+                } catch (error) {
+                    console.log('error',error)
+
+                    if (error.response) {
+                        if (error.response.status === 422) {
+                            for (var key in error.response.data.errors) {
+                                var errorElement = document.getElementById(key + "-error");
+                                errorElement.innerHTML = error.response.data.errors[key][0];
+                                errorElement.style.display = "block";
+                            }
+                        }
+                    }
+
+                    else if (error.request) {
+                        console.log("No response received:", error.request);
+                    }
+                    
+                    else {
+                        console.error("Request error:", error.message);
+                    }
+
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = "حفظ";
+                }
+            }
+
+            sendRequest();
+        });
+
+
         function changeCategoryType() {
             var mainCategory = document.getElementById('type1');
             var SubCategory = document.getElementById('type2');

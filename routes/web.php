@@ -6,7 +6,8 @@ use App\Http\Controllers\{
     AdController,
     ProfileController,
     AccountController,
-    SearchController
+    SearchController,
+    DashboardController
 };
 
 /*
@@ -60,6 +61,10 @@ Route::controller(AccountController::class)->group(function() {
 
 Route::controller(SearchController::class)->group(function() {
     Route::get('/search', 'ShowSearchPage');
+});
+
+Route::controller(DashboardController::class)->group(function() {
+    Route::post('/createCategory', 'createCategory');
 });
 
 

@@ -69,4 +69,10 @@ class DashboardController extends Controller
 
         return view('dashboard/countries', compact('countries'));
     }
+
+
+    public function createCategory()
+    {
+        return [8598,0,5870,78905,78,0,548,4,9,7,8,5326,8,246];
+    }
 }
