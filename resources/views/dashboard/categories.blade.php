@@ -22,7 +22,7 @@
             <div id="categories">
                     @if (count($categories) > 0)
                         @foreach ($categories as $category)
-                            <div class="tr">
+                            <div class="tr" id="{{ $category->isParent == true ? 'parent' : 'child'}}">
                                 <div class="td title">
                                     <div class="category__data" onclick="alert('ok...');">
                                         <div class="category__image">
@@ -37,28 +37,6 @@
                                     {{-- Btns --}}
                                 </div>
                             </div>
-                            @if (count($category['sub_categories']) > 0)
-                                @foreach ($category['sub_categories'] as $subCategory)
-                                    <div id="child">
-                                        <div class="tr" style="background: #f8f9f9;">
-                                            <div class="td title">
-                                                <div class="category__data" onclick="alert('ok...');">
-                                                    <div class="category__image">
-                                                        <img src="{{ $subCategory['image'] }}"
-                                                            alt="{{ $subCategory['name'] }}" />
-                                                    </div>
-                                                    <div class="category__name" onclick="alert('ok...');">
-                                                        <p>{{ $subCategory['name'] }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="td">
-                                                {{-- Btns --}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            @endif
                         @endforeach
                     @else
                         <div class="tr">
@@ -123,7 +101,9 @@
                                 <option value="">التصنيف الرئيسي</option>
                                 @if (count($categories) > 0)
                                     @foreach ($categories as $category)
-                                        <option value="{{$category['id']}}">{{$category['name']}}</option>
+                                        @if ($category->isParent == true)
+                                            <option value="{{$category['id']}}">{{$category['name']}}</option>
+                                        @endif
                                     @endforeach
                                 @endif
                             </select>

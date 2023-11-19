@@ -9,6 +9,7 @@ use App\Models\Country;
 use App\Models\City;
 use App\Models\User;
 use App\Models\Ad;
+use DB;
 
 
 class DashboardController extends Controller
@@ -34,26 +35,14 @@ class DashboardController extends Controller
 
     public function show_categories()
     {
-        $categories = Category::latest()->get();
 
-        $results = [];
+        $subCategories = SubCategory::select('id','image','name','slug', 'created_at', \DB::raw("false as isParent"));
 
-        foreach($categories as $cat) {
-            $subCategories = SubCategory::where('category', $cat->id)->latest()->get();
-
-            $returnData = [
-                'id' => $cat->id,
-                'name' => $cat->name,
-                'image' => $cat->image,
-                'created_at' => $cat->created_at,
-                'sub_categories' => $subCategories,
-            ];
-            
-            $results[] = $returnData;
-        }
-
-        $categories = $results;
-
+        $categories = Category::select('id','image','name','slug', 'created_at', \DB::raw("true as isParent"))
+        ->union($subCategories)
+        ->latest()
+        ->get();
+        
         return view('dashboard/categories', compact('categories'));
     }
 
