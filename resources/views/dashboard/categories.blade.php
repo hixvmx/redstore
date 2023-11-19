@@ -9,21 +9,13 @@
     <div class="db__sec wd__80">
         <div class="db__header">
             <h2>التصنيفات ({{count($categories)}})</h2>
-            <div class="filterOptions">
-                <button id="onlyParentsBtn">
-                    <svg viewBox="0 0 24 24"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g> <path d="M22 6C22.5523 6 23 6.44772 23 7C23 7.55229 22.5523 8 22 8H2C1.44772 8 1 7.55228 1 7C1 6.44772 1.44772 6 2 6L22 6Z"></path> <path d="M22 11C22.5523 11 23 11.4477 23 12C23 12.5523 22.5523 13 22 13H2C1.44772 13 1 12.5523 1 12C1 11.4477 1.44772 11 2 11H22Z"></path> <path d="M23 17C23 16.4477 22.5523 16 22 16H2C1.44772 16 1 16.4477 1 17C1 17.5523 1.44772 18 2 18H22C22.5523 18 23 17.5523 23 17Z"></path> </g></svg>
-                </button>
-                <button id="ParentsAndChildrensBtn" class="active">
-                    <svg viewBox="0 0 24 24"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g> <path d="M1 12C1 11.4477 1.44772 11 2 11H22C22.5523 11 23 11.4477 23 12C23 12.5523 22.5523 13 22 13H2C1.44772 13 1 12.5523 1 12Z"></path> <path d="M1 4C1 3.44772 1.44772 3 2 3H22C22.5523 3 23 3.44772 23 4C23 4.55228 22.5523 5 22 5H2C1.44772 5 1 4.55228 1 4Z"></path> <path d="M1 20C1 19.4477 1.44772 19 2 19H22C22.5523 19 23 19.4477 23 20C23 20.5523 22.5523 21 22 21H2C1.44772 21 1 20.5523 1 20Z"></path> </g></svg>
-                </button>
-            </div>
         </div>
         <div class="db__body">
-            <div id="categories">
+            <table id="categories">
                     @if (count($categories) > 0)
                         @foreach ($categories as $category)
-                            <div class="tr" id="{{ $category->isParent == true ? 'parent' : 'child'}}">
-                                <div class="td title">
+                            <tr id="{{ $category->isParent == true ? 'parent' : 'child'}}">
+                                <td>
                                     <div class="category__data" onclick="alert('ok...');">
                                         <div class="category__image">
                                             <img src="{{ $category['image'] }}" alt="{{ $category['name'] }}" />
@@ -32,18 +24,19 @@
                                             <p>{{ $category['name'] }}</p>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="td">
-                                    {{-- Btns --}}
-                                </div>
-                            </div>
+                                </td>
+                                <td>
+                                    <button>Delete</button>
+                                    <button>Edit</button>
+                                </td>
+                            </tr>
                         @endforeach
                     @else
-                        <div class="tr">
-                            <div class="td" colspan="4">Not Found!</div>
-                        </div>
+                        <tr>
+                            <td>Not Found!</td>
+                        </tr>
                     @endif
-            </div>
+            </table>
         </div>
 
         {{-- Pagination --}}
@@ -134,40 +127,6 @@
     </div>
 
     <script>
-        var onlyParentsBtn = document.getElementById('onlyParentsBtn');
-        var ParentsAndChildrensBtn = document.getElementById('ParentsAndChildrensBtn');
-        var Childrens = document.querySelectorAll('#child');
-
-        function changeListing(opt) {
-            if (opt == 'only_parents') {
-                Object.keys(Childrens).forEach(function(key) {
-                    Childrens[key].style.display = 'none';
-                });
-
-                ParentsAndChildrensBtn.classList.toggle("active");
-                onlyParentsBtn.classList.toggle("active");
-                return;
-            }
-
-            Object.keys(Childrens).forEach(function(key) {
-                Childrens[key].style.display = 'block';
-            });
-
-            ParentsAndChildrensBtn.classList.toggle("active");
-            onlyParentsBtn.classList.toggle("active");
-        }
-
-        onlyParentsBtn.addEventListener("click", function() {
-            changeListing('only_parents');
-        });
-
-        ParentsAndChildrensBtn.addEventListener("click", function() {
-            changeListing('parents_and_childrens');
-        });
-
-
-        
-        
         function changeCategoryType() {
             var mainCategory = document.getElementById('type1');
             var SubCategory = document.getElementById('type2');
@@ -179,7 +138,6 @@
                 mainCategorySection.style.display = 'none';
             }
         }
-
 
         // index image
         document.getElementById('categoryImage').addEventListener('change', function(e) {
@@ -195,18 +153,5 @@
             previewImage.src = URL.createObjectURL(file)
             previewImage.style.display = 'block';
         });
-
-
-        // hide modal
-        function toggleModal(val) {
-            var modalBox = document.getElementById('modalBox');
-            
-            if (val) {
-                modalBox.style.display = "block";
-                return;
-            }
-
-            modalBox.style.display = "none";
-        }
     </script>
 @endsection
