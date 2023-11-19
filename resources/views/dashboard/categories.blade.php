@@ -153,5 +153,17 @@
             previewImage.src = URL.createObjectURL(file)
             previewImage.style.display = 'block';
         });
+
+        // hide modal
+        function toggleModal(val) {
+            var modalBox = document.getElementById('modalBox');
+            
+            if (val) {
+                modalBox.style.display = "block";
+                return;
+            }
+
+            modalBox.style.display = "none";
+        }
     </script>
 @endsection
