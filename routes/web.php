@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
-    UserController,
     HomeController,
     AdController,
     ProfileController,
@@ -22,16 +21,7 @@ use App\Http\Controllers\{
 */
 
 
-// authentication routes
-Route::controller(UserController::class)->group(function() {
-    Route::middleware('guest')->group(function() {
-        Route::get('/register', 'ShowRegisterPage');
-        Route::post('/register', 'SaveNewUser');
-        Route::get('/login', 'ShowLoginPage');
-        Route::post('/login', 'login');
-    });
-    Route::get('/logout', 'logout')->middleware('auth');
-});
+
 
 
 Route::controller(HomeController::class)->group(function() {
@@ -73,5 +63,5 @@ Route::controller(SearchController::class)->group(function() {
 });
 
 
-// call dashboard routes
+require __DIR__.'/auth.php';
 require __DIR__.'/dashboard.php';
