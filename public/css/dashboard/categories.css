@@ -59,6 +59,35 @@
     height: 100%;
 }
 
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.buttons button {
+    display: flex;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: #eee;
+    transition: 0.3s;
+}
+
+.buttons button svg {
+    fill: #f44336;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    transition: 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #f44336;
+}
+
+.buttons button:hover svg {
+    fill: #fff;
+}
+
 /* Pagination */
 .pagination {
     margin: 1rem 0 2rem 0;
