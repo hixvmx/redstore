@@ -25,6 +25,22 @@ class Category extends Model
     }
 
 
+    public function getCreatedAtAttribute()
+    {
+        $createdAt = $this->attributes['created_at'];
+
+        if (!empty($createdAt))
+        {
+            return [
+                "date" => explode(' ', $createdAt)[0],
+                "time" => explode(' ', $createdAt)[1]
+            ];
+        }
+        
+        return [];
+    }
+
+
     public function SubCategories() {
         return $this->hasMany(SubCategory::class, 'category', 'id');
     }
