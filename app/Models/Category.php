@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\SubCategory;
+use App\Models\Category;
 
 class Category extends Model
 {
@@ -12,6 +13,20 @@ class Category extends Model
 
 
     protected $fillable = ['name','slug'];
+
+    
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = $value;
+
+        $slug = str_replace(' ','-',$value);
+
+        // check to see if any other slugs exist that are the same & count them
+        $count = Category::whereRaw("slug = '{$slug}'")->orWhere('slug', 'LIKE', $slug . '%')->count();
+
+        // if other slugs exist that are the same, append the count to the slug
+        $this->attributes['slug'] = $count ? "{$slug}-{$count}" : $slug;
+    }
 
 
     public function getImageAttribute()
