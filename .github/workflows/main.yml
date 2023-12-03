@@ -39,6 +39,6 @@ jobs:
         server: ${{ secrets.SERVER }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        protocol: ftp
+        protocol: ftps
         port: 21
         passive: true
