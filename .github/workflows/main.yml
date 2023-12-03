@@ -14,8 +14,13 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
-        server: ${{ secrets.SERVER }}
-        username: ${{ secrets.USERNAME }}
+        # server: ${{ secrets.SERVER }}
+        # username: ${{ secrets.USERNAME }}
+        # password: ${{ secrets.PASSWORD }}
+        # protocol: ftps
+        # port: 21
+        server: ${{ secrets.premium248.web-hosting.com }}
+        username: ${{ secrets.zdnbrixc }}
         password: ${{ secrets.PASSWORD }}
         protocol: ftps
-        port: 21
+        port: 21098
