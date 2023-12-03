@@ -11,6 +11,13 @@ jobs:
     - uses: actions/checkout@v2.1.0
       with:
         fetch-depth: 2
+
+    - name: Debug
+      run: |
+        echo "Server: ${{ secrets.SERVER }}"
+        echo "Username: ${{ secrets.USERNAME }}"
+        echo "Password: ${{ secrets.PASSWORD }}"
+
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
@@ -18,4 +25,4 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         protocol: ftps
-        port:  21
+        port: 21
