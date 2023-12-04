@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('metatags')
-    <title>add new ad - RedBox</title>
+    <title>add new ad - redStore</title>
     <link rel="stylesheet" href="{{ asset('css/components/header.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/components/footer.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/newad.css') }}" />

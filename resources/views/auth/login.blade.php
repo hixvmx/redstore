@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('metatags')
-    <title>تسجيل الدخول - RedBox</title>
+    <title>تسجيل الدخول - redStore</title>
     <link rel="stylesheet" href="{{ asset('css/components/header.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/components/footer.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/auth/login.css') }}" />

@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('metatags')
-    <title>Search - RedBox</title>
+    <title>Search - redStore</title>
     <link rel="stylesheet" href="{{ asset('css/components/header.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/components/footer.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/search.css') }}" />

@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('metatags')
-    <title>إنشاء حساب - RedBox</title>
+    <title>إنشاء حساب - redStore</title>
     <link rel="stylesheet" href="{{ asset('css/components/header.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/components/footer.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/auth/register.css') }}" />

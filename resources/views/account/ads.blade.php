@@ -1,6 +1,6 @@
 @extends('layout.account')
 @section('pg_metatags')
-    <title>ads - RedBox</title>
+    <title>ads - redStore</title>
     <link rel="stylesheet" href="{{ asset('css/account/ads.css') }}" />
 @endsection
 
