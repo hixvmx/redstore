@@ -2,6 +2,11 @@
 use Illuminate\Support\Facades\Artisan;
 
 Route::prefix('/run/command')->group(function() {
+    Route::get('/composer-install', function() {
+        Artisan::call('composer:install');
+        return 'Running composer install.';
+    });
+    
     Route::get('/migrate', function() {
         Artisan::call('migrate');
         return 'Migrating database.';
