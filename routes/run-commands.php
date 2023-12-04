@@ -7,8 +7,7 @@ Route::prefix('/run/command')->group(function() {
         return 'Migrating database.';
     });
 
-    // Clear application cache:
-    Route::get('/seeder', function() {
+    Route::get('/seed', function() {
         Artisan::call('db:seed --class=CountrySeeder');
         Artisan::call('db:seed --class=CategorySeeder');
         Artisan::call('db:seed --class=CurrencySeeder');
