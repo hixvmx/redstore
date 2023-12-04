@@ -25,12 +25,12 @@
                     <div class="login__form">
                         <div class="input__group">
                             <label for="">البريد الإلكتروني</label>
-                            <input name="email" id="email" type="text" value="hixvmx@gmail.com" />
+                            <input name="email" id="email" type="text" />
                             <span class="err" id="email-error" style="display: none;"></span>
                         </div>
                         <div class="input__group">
                             <label for="">كلمة السر</label>
-                            <input name="password" id="password" type="password" value="hixvmx" />
+                            <input name="password" id="password" type="password" />
                             <span class="err" id="password-error" style="display: none;"></span>
                         </div>
 
