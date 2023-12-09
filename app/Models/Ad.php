@@ -101,7 +101,7 @@ class Ad extends Model
     {
         $categoryID = $this->attributes['category'];
 
-        $categoryData = Category::select('id','name','slug','image')->where('id', $categoryID)->first();
+        $categoryData = Category::select('id','name','slug')->where('id', $categoryID)->first();
 
         return $categoryData ?? [];
     }
@@ -111,7 +111,7 @@ class Ad extends Model
     {
         $subCategoryID = $this->attributes['sub_category'];
 
-        $subCategoryData = SubCategory::select('id','name','slug','image')->where('id', $subCategoryID)->first();
+        $subCategoryData = SubCategory::select('id','name','slug')->where('id', $subCategoryID)->first();
 
         return $subCategoryData ?? [];
     }
