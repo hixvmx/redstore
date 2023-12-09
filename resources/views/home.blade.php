@@ -47,7 +47,7 @@
                                                 </div>
                                             </a>
                                             <div class="ad__price">
-                                                <b>{{ $ad->currency->name . ' ' . $ad->price }}</b>
+                                                <b>{{ $ad->price . ' ' . $ad->currency->name }}</b>
                                             </div>
                                             <div class="ad__footer flex aic__jcs">
                                                 <div>

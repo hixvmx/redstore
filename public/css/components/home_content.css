@@ -136,7 +136,7 @@
     right: -2rem;
     padding: .5rem;
     border-radius: 50%;
-    background-color: rgb(255 255 255 / 70%);
+    background-color: rgb(255 255 255 / 100%);
     box-shadow: var(--shadow);
     transition: 0.3s;
     opacity: 0;
@@ -150,10 +150,6 @@
 
 .favorite__btn svg path {
     stroke: var(--text-color-secondary);
-}
-
-.favorite__btn:hover {
-    background-color: rgb(255 255 255 / 100%);
 }
 
 .favorite__btn:hover svg path {
