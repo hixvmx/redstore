@@ -154,85 +154,6 @@ header {
     display: block;
 }
 
-/* #########  NavBar  ########## */
-
-nav {
-    background-color: var(--bg-color-secondary);
-    border-top: 1px solid rgba(228, 228, 231, 1);
-}
-
-/* .nav {} */
-
-.nav__ul {
-    cursor: context-menu;
-}
-
-.nav__li {
-    display: inline-block;
-}
-
-.category__li {
-    position: relative;
-}
-
-.category__title {
-    padding: 14px;
-    background-color: var(--bg-color-secondary);
-    cursor: pointer;
-}
-
-.category__title:hover {
-    background-color: var(--bg-color-primary);
-}
-
-.category__title span {
-    color: var(--text-color-primary);
-    font-weight: var(--font-bold);
-}
-
-.category__li:hover .sub__category {
-    display: block;
-}
-
-.sub__category {
-    display: none;
-    position: absolute;
-    right: 0;
-    z-index: 1;
-}
-
-.sub__category__row {
-    background-color: var(--bg-color-secondary);
-    box-shadow: var(--shadow);
-    padding: 8px;
-    border-radius: 4px;
-    width: 270px;
-    max-height: 70vh;
-    overflow: auto;
-}
-
-.sub__category__link div {
-    padding: 10px 5px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-}
-
-.sub__category__link div:hover {
-    background-color: var(--bg-color-primary);
-}
-
-.sub__category__link div img {
-    margin-left: 8px;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-}
-
-.sub__category__link div span {
-    color: var(--text-color-secondary);
-}
-
 
 
 /* #############  Media Sizes  ############# */
@@ -246,7 +167,7 @@ nav {
 
 }
 @media only screen and (max-width: 768px) {
-    .header, .nav{padding: 0px 10px;}
+    .header {padding: 0px 10px;}
 }
 @media only screen and (max-width: 600px) {
 	

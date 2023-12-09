@@ -1,28 +1,11 @@
 <?php
     use Illuminate\Support\Facades\Auth;
     use App\Models\Ad;
-    use App\Models\Category;
-    use App\Models\SubCategory;
 
     $authCheck = Auth::check();
     $authUser = Auth::user();
     if ($authUser) {
         $adsCount = Ad::where('publisher', $authUser->id)->count();
-    }
-
-    // get categories
-    $categories = Category::select('id','slug','name','image')->get();
-
-    function getSubCategories($categoryID) {
-        if (!empty($categoryID)) {
-
-            $SubCategoriesData = SubCategory::select('id','slug','name','image')
-            ->where('category', $categoryID)
-            ->get();
-
-            return $SubCategoriesData;
-        }
-        return [];
     }
 
 ?>
@@ -117,41 +100,4 @@
             </a>
         </div>
     </div>
-    <nav>
-        <div class="nav wd__80 flex aic__jcs ">
-            <ul class="nav__ul">
-
-                @if (count($categories) > 0)
-                    @foreach ($categories as $category)
-                        <li class="nav__li">
-                            <div class="category__li">
-                                <a href="/search?category={{$category->id}}">
-                                    <div class="category__title">
-                                        <span>{{$category->name}}</span>
-                                    </div>
-                                </a>
-                                <div class="sub__category">
-                                    <div class="sub__category__row">
-                                        <?php $SubCategories = getSubCategories($category->id); ?>
-                                        @if (count($SubCategories) > 0)
-                                            @foreach ($SubCategories as $subCategory)
-                                                <div class="sub__category__link">
-                                                    <a href="/search?category={{$category->id}}&subCategory={{$subCategory->id}}">
-                                                        <div>
-                                                            <img src="{{$subCategory->image}}" alt="{{$subCategory->name}}" />
-                                                            <span>{{$subCategory->name}}</span>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            @endforeach
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    @endforeach
-                @endif
-            </ul>
-        </div>
-    </nav>
 </header>
