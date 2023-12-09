@@ -7,7 +7,8 @@ use App\Http\Controllers\{
     ProfileController,
     AccountController,
     SearchController,
-    DashboardController
+    DashboardController,
+    CategoryController
 };
 
 /*
@@ -27,6 +28,10 @@ use App\Http\Controllers\{
 
 Route::controller(HomeController::class)->group(function() {
     Route::get('/', 'ShowHomePage');
+});
+
+Route::controller(CategoryController::class)->group(function() {
+    Route::get('/categories', 'ShowCategoriesPage');
 });
 
 
