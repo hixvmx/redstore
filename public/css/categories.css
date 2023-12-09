@@ -10,7 +10,7 @@
 
 .show__categories {
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 1.873rem;
+    column-gap: 2rem;
 }
 
 .category {
