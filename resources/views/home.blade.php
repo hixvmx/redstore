@@ -26,16 +26,16 @@
     </section>
 
     <main class="main wd__80">
-        @if (count($categoriesx) > 0)
-            @foreach ($categoriesx as $categoryx)
+        @if (count($categories) > 0)
+            @foreach ($categories as $category)
                 <section class="ads">
                     <div class="ads__row">
                         <div class="ads__title">
-                            <h2>الأكثر مبيعاََ في : {{ $categoryx['name'] }}</h2>
+                            <h2>الأكثر مبيعاََ في : {{ $category->name }}</h2>
                         </div>
                         <div class="ads__slide grid">
-                            @if (count($categoryx['items']) > 0)
-                                @foreach ($categoryx['items'] as $ad)
+                            @if (count($category->ads) > 0)
+                                @foreach ($category->ads as $ad)
                                     <div class="ad">
                                         <div class="ad__row">
                                             <a href="/ad/{{ $ad->slug }}" class="href">
@@ -54,7 +54,7 @@
                                                     <span>{{ $ad->country->name }}</span>
                                                 </div>
                                                 <div>
-                                                    <span>20 أغسطس</span>
+                                                    <span>{{ $ad->created_at['date'] }}</span>
                                                 </div>
                                             </div>
                                             <button class="favorite__btn"><svg viewBox="0 0 24 24" fill="none">
