@@ -81,6 +81,15 @@
                     </a>
                 </div>
             </li>
+            <li class="header__li">
+                <div class="header__categories__btn">
+                    <a href="/categories">
+                        <div>
+                            <span>التصنيفات</span>
+                        </div>
+                    </a>
+                </div>
+            </li>
             @if (!$authCheck)
             <li class="header__li">
                 <div class="header__login__btn">

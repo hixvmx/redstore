@@ -16,7 +16,7 @@ header {
     margin-left: 1rem;
 }
 
-.header__publish__btn div, .header__login__btn div {
+.header__publish__btn div, .header__login__btn div, .header__categories__btn div {
     padding: 8px 14px;
     border-radius: 4px;
     display: flex;
@@ -54,6 +54,10 @@ header {
 
 .header__login__btn div span, .header__login__btn div i {
     color: var(--text-color-primary);
+}
+
+.header__categories__btn:hover span {
+    color: var(--first-color);
 }
 
 .header__user__dropdown {
