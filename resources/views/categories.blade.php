@@ -1,23 +1,3 @@
-<?php
-use App\Models\Category;
-use App\Models\SubCategory;
-
-// get categories
-$categories = Category::select('id', 'slug', 'name', 'image')->get();
-
-function getSubCategoriesx($categoryID)
-{
-    if (!empty($categoryID)) {
-        $SubCategoriesData = SubCategory::select('id', 'slug', 'name', 'image')
-            ->where('category', $categoryID)
-            ->get();
-
-        return $SubCategoriesData;
-    }
-    return [];
-}
-
-?>
 @extends('layout.master')
 @section('metatags')
     <title>categories - redStore</title>
@@ -41,19 +21,18 @@ function getSubCategoriesx($categoryID)
                                 <a href="/search?category={{ $category->id }}">
                                     <div class="category_parent">
                                         <h3>{{ $category->name }}</h3>
-                                        <span>504</span>
+                                        <span>{{ $category->total_ads }}</span>
                                     </div>
                                 </a>
                             </div>
                             <div class="categories__sub__category">
-                                <?php $subCategories = getSubCategoriesx($category->id); ?>
-                                @if (count($subCategories) > 0)
-                                    @foreach ($subCategories as $subCategory)
+                                @if (count($category->childrens) > 0)
+                                    @foreach ($category->childrens as $subcategory)
                                         <a
-                                            href="/search?category={{ $category->id }}&subCategory={{ $subCategory->id }}">
+                                            href="/search?category={{ $category->id }}&subCategory={{ $subcategory->id }}">
                                             <div class="category_child">
-                                                <h3>{{ $subCategory->name }}</h3>
-                                                <span>504</span>
+                                                <h3>{{ $subcategory->name }}</h3>
+                                                <span>{{ $subcategory->total_ads }}</span>
                                             </div>
                                         </a>
                                     @endforeach
