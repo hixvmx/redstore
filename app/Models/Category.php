@@ -29,17 +29,6 @@ class Category extends Model
     }
 
 
-    public function getImageAttribute()
-    {
-        if (!empty($this->attributes['image']))
-        {
-            return url("") . $this->attributes['image'];
-        }
-        
-        return url("") . "/image/default.png";
-    }
-
-
     public function getCreatedAtAttribute()
     {
         $createdAt = $this->attributes['created_at'];

@@ -12,17 +12,6 @@ class SubCategory extends Model
 
     protected $fillable = ['name','slug','category'];
 
-
-    public function getImageAttribute()
-    {
-        if (!empty($this->attributes['image']))
-        {
-            return url("") . $this->attributes['image'];
-        }
-        
-        return url("") . "/image/default.png";
-    }
-
     
     public function setNameAttribute($value)
     {

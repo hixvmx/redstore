@@ -26,11 +26,11 @@ class AdController extends Controller
 
     public function ShowNewAdPage() {
 
-        $categories = Category::select('id','name','slug','image')
+        $categories = Category::select('id','name','slug')
         ->latest()
         ->get();
 
-        $sub_categories = SubCategory::select('id','name','slug','image','category')
+        $sub_categories = SubCategory::select('id','name','slug','category')
         ->latest()
         ->get();
 
@@ -59,11 +59,11 @@ class AdController extends Controller
 
         if (!$ad) return redirect('/');
 
-        $categories = Category::select('id','name','slug','image')
+        $categories = Category::select('id','name','slug')
         ->latest()
         ->get();
 
-        $sub_categories = SubCategory::select('id','name','slug','image','category')
+        $sub_categories = SubCategory::select('id','name','slug','category')
         ->latest()
         ->get();
 
