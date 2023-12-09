@@ -27,26 +27,25 @@ function getSubCategoriesx($categoryID)
 @endsection
 
 @section('content')
-    <main class="main wd__80">
-        <section class="welcome">
-            <div class="welcome__row flex ">
-                <h2 class="welcome__title">
-                    بيع و شراء كل ما تحتاجه وأنت متكي على الكنبة
-                </h2>
-                <div class="search">
-                    <div class="search__row">
-                        <form action="/search" method="get">
-                            <div class="search__form flex">
-                                <button type="submit">بحث</button>
-                                <input type="text" name="keywords" placeholder="ابحث في الموقع" />
-                            </div>
-                        </form>
-                    </div>
+    <section class="welcome">
+        <div class="welcome__row flex wd__80">
+            <h2 class="welcome__title">
+                بيع و شراء كل ما تحتاجه وأنت متكي على الكنبة
+            </h2>
+            <div class="search">
+                <div class="search__row">
+                    <form action="/search" method="get">
+                        <div class="search__form flex">
+                            <button type="submit">بحث</button>
+                            <input type="text" name="keywords" placeholder="ابحث في الموقع" />
+                        </div>
+                    </form>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-
+    <main class="main wd__80">
         @if (count($categories) > 0)
             <section class="categories">
                 <div class="categories__row">

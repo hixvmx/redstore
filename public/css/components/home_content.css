@@ -1,11 +1,10 @@
  /* ##########  Welcome  ########## */
  .welcome {
-    margin: 3rem 0;
+    margin-bottom: 3rem;
     background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(/image/welcome.jpg);
     background-position: center;
     background-size: cover;
-    height: 400px;
-    border-radius: 4px;
+    height: 450px;
 }
 
 .welcome__row {
@@ -231,7 +230,7 @@
     
 }
 @media only screen and (max-width: 1000px) {
-    .welcome{margin: 2rem 0;height: 330px;}
+    .welcome{margin-bottom: 2rem;height: 400px;}
     /* ##### */
     .categories {margin-top: 1rem;}
     .show__categories {grid-template-columns: repeat(4, 1fr);}
@@ -239,7 +238,6 @@
     .ads__slide {grid-template-columns: repeat(4, 1fr);}
 }
 @media only screen and (max-width: 900px) {
-    .welcome{margin: 1rem 0;height: 300px;}
     /* ##### */
     .categories {margin-top: 2rem;}
     .show__categories {grid-template-columns: repeat(3, 1fr);}
@@ -247,12 +245,12 @@
     .ads__slide {grid-template-columns: repeat(3, 1fr);}
 }
 @media only screen and (max-width: 768px) {
-    .welcome{height: 250px;}
+    .welcome{margin-bottom: 1rem;height: 350px;}
     .welcome__title {padding: 0 10px;}
     .search {margin-top: 1rem;padding: 0 10px;width: 100%;}
     .search__row {padding: 8px;background-color: transparent;}
     .search__form {flex-direction: column-reverse;justify-content: center;align-items: center;}
-    .search__form button {margin-top: 10px;}
+    .search__form button {margin-top: 10px;margin-left: 0px;width: 100%;}
     /* ##### */
     .categories {margin-top: 3rem;}
     .show__categories {grid-template-columns: repeat(2, 1fr);}
@@ -260,5 +258,4 @@
     .ads__slide {grid-template-columns: repeat(2, 1fr);}
 }
 @media only screen and (max-width: 600px) {
-	.welcome{height: 220px;}
 }
