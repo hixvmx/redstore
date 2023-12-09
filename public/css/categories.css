@@ -1,12 +1,11 @@
 .categories {
-    padding-top: 3rem;
-    background-color: var(--bg-color-secondary);
+    margin-top: 3rem;
     min-height: 100vh;
 }
 
 .categories__title {
-    padding-bottom: 4px;
-    margin-bottom: 4px;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .show__categories {
@@ -16,7 +15,6 @@
 
 .category {
     margin-bottom: 2rem;
-    background-color: var(--bg-color-secondary);
 }
 
 .category_parent {

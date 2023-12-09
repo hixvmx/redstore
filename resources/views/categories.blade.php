@@ -18,7 +18,6 @@ function getSubCategoriesx($categoryID)
 }
 
 ?>
-
 @extends('layout.master')
 @section('metatags')
     <title>categories - redStore</title>
