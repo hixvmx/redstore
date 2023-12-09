@@ -11,9 +11,9 @@
 ?>
 <header>
     <div class="header wd__80 flex aic__jcs ">
-        <ul class="header__ul flex">
+        <ul class="header__ul flex aic">
             @if ($authCheck)
-                <li class="header__li aic">
+                <li class="header__li">
                     <div class="header__user__dropdown">
                         <div class="img__icon">
                             <img src="{{ url($authUser->avatar ?? '') }}" alt="{{ $authUser->username }}" />
