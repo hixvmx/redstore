@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="ad__address__date">
                                     <p>بتاريخ :</p>
-                                    <a>{{ explode(' ', $ad->created_at)[0] }}</a>
+                                    <a>{{ $ad->created_at['date'] }}</a>
                                     <span>.</span>
                                     <p>الدولة :</p>
                                     <a href="/search?country={{ $ad->country->id }}" class="a">{{ $ad->country->name }}</a>
