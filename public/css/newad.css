@@ -141,3 +141,22 @@
 .input__btn button[disabled]:hover {
     opacity: 1;
 }
+
+/* #############  Media Sizes  ############# */
+@media only screen and (max-width: 1200px) {
+    
+}
+@media only screen and (max-width: 1000px) {
+
+}
+@media only screen and (max-width: 900px) {
+
+}
+@media only screen and (max-width: 768px) {
+    
+}
+@media only screen and (max-width: 500px) {
+    .group__in__group {
+        display: unset;
+    }
+}
