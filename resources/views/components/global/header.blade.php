@@ -98,7 +98,8 @@
                 <div class="header__publish__btn">
                     <a href="/new-ad">
                         <div>
-                            <span>انشر إعلانك</span>
+                            <span class="btn_txt_web">انشر إعلانك</span>
+                            <span class="btn_txt_mob">نشر</span>
                         </div>
                     </a>
                 </div>
