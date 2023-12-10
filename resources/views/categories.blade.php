@@ -17,7 +17,7 @@
                 @foreach ($categories as $category)
                     <div class="category">
                         <div class="category__row">
-                            <div class="category__title__img">
+                            <div class="category__title">
                                 <a href="/search?category={{ $category->id }}">
                                     <div class="category_parent">
                                         <h3>{{ $category->name }}</h3>
