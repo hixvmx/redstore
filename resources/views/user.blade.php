@@ -98,9 +98,7 @@
                             <div class="ad">
                                 <div class="ad__row">
                                     <a href="/ad/{{$ad->slug}}" class="href">
-                                        <div class="ad__image">
-                                            <img src="{{$ad->image}}" alt="{{$ad->title}}" />
-                                        </div>
+                                        <div class="ad__image" style="background-image: url({{$ad->image}})"></div>
                                         <div class="ad__title">
                                             <h3 title="{{$ad->title}}">{{$ad->title}}</h3>
                                         </div>

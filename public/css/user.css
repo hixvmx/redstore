@@ -177,9 +177,14 @@
     overflow: hidden;
 }
 
-.ad__image img {
+.ad__image {
+    background-color: var(--bg-color-primary);
     border-radius: 4px;
     width: 100%;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
 }
 
 .ad__title {
@@ -236,4 +241,48 @@
     opacity: 1;
     top: .5rem;
     right: .5rem;
+}
+
+
+/* #############  Media Sizes  ############# */
+@media only screen and (max-width: 1400px) {
+    .ads__slide {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .ad__image {
+        height: 150px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+}
+
+@media only screen and (max-width: 1000px) {
+    .user__page {
+        margin: 1rem 0;
+        grid-template-columns: 1fr;
+    }
+    .share__page__row {
+        padding: 1rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+}
+
+@media only screen and (max-width: 768px) {
+    .favorite__btn {
+        opacity: 1;
+        top: .5rem;
+        right: .5rem;
+    }
+    .ads__slide {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .ad__image {
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
 }
