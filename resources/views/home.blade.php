@@ -26,16 +26,14 @@
     </section>
 
     <main class="main wd__80">
-        @if (count($categories) > 0)
-            @foreach ($categories as $category)
                 <section class="ads">
                     <div class="ads__row">
                         <div class="ads__title">
-                            <h2>الأكثر مبيعاََ في : {{ $category->name }}</h2>
+                            <h2>الأكثر مبيعاََ :</h2>
                         </div>
                         <div class="ads__slide grid">
-                            @if (count($category->ads) > 0)
-                                @foreach ($category->ads as $ad)
+                            @if (count($ads) > 0)
+                                @foreach ($ads as $ad)
                                     <div class="ad">
                                         <div class="ad__row">
                                             <a href="/ad/{{ $ad->slug }}" class="href">
@@ -73,7 +71,5 @@
                         </div>
                     </div>
                 </section>
-            @endforeach
-        @endif
     </main>
 @endsection
