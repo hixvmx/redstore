@@ -122,7 +122,9 @@ input, select, option, textarea {
 }
 
 .maxWidth {
-    width: 80%;
+    max-width: 1600px;
+    padding-left: 1rem;
+    padding-right: 1rem;
     margin: auto;
 }
 
@@ -169,18 +171,12 @@ input, select, option, textarea {
 
 /* #############  Media Sizes  ############# */
 @media only screen and (max-width: 1200px) {
-    .maxWidth{width:85%;}
 }
 @media only screen and (max-width: 1000px) {
-    .maxWidth{width:90%;}
 }
 @media only screen and (max-width: 900px) {
-	.maxWidth{width:95%;}
 }
 @media only screen and (max-width: 768px) {
-	.maxWidth{width:100%;}
-    .main{padding: 0px 10px;}
 }
 @media only screen and (max-width: 600px) {
-	
 }
