@@ -49,7 +49,7 @@
                                         </div>
                                     @endif
                                 </td>
-                                <td>{{$ad->created_at}}</td>
+                                <td>{{$ad->created_at['date']}}</td>
                                 <td align="left">
                                     <div class="settings__dropdown">
                                         <button class="dropdown__btn">
