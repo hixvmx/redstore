@@ -268,14 +268,14 @@
 }
 
 @media only screen and (max-width: 900px) {
-}
-
-@media only screen and (max-width: 768px) {
     .favorite__btn {
         opacity: 1;
         top: .5rem;
         right: .5rem;
     }
+}
+
+@media only screen and (max-width: 768px) {
     .ads__slide {
         grid-template-columns: repeat(1, 1fr);
     }
