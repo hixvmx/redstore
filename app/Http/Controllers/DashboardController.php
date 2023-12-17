@@ -32,47 +32,4 @@ class DashboardController extends Controller
         
         return view('dashboard/ads', compact('ads'));
     }
-
-    public function show_categories()
-    {
-
-        $subCategories = SubCategory::select('id','image','name','slug', 'created_at', \DB::raw("false as isParent"));
-
-        $categories = Category::select('id','image','name','slug', 'created_at', \DB::raw("true as isParent"))
-        ->union($subCategories)
-        ->latest()
-        ->get();
-        
-        return view('dashboard/categories', compact('categories'));
-    }
-
-    public function show_countries()
-    {
-        $countries = Country::latest()->get();
-
-        $results = [];
-
-        foreach($countries as $cntr) {
-            $cities = City::where('country', $cntr->id)->latest()->get();
-
-            $returnData = [
-                'id' => $cntr->id,
-                'name' => $cntr->name,
-                'created_at' => $cntr->created_at,
-                'cities' => $cities,
-            ];
-            
-            $results[] = $returnData;
-        }
-
-        $countries = $results;
-
-        return view('dashboard/countries', compact('countries'));
-    }
-
-
-    public function createCategory()
-    {
-        return [8598,0,5870,78905,78,0,548,4,9,7,8,5326,8,246];
-    }
 }
