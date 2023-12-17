@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    <div class="db__sec wd__80">
+    <div class="db__sec maxWidth">
         <div class="db__header">
             <h2>الإعلانات ({{$ads->count()}})</h2>
         </div>

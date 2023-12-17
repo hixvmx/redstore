@@ -8,7 +8,7 @@
 
 @section('content')
     <section class="welcome">
-        <div class="welcome__row flex wd__80">
+        <div class="welcome__row flex maxWidth">
             <h2 class="welcome__title">
                 بيع و شراء كل ما تحتاجه وأنت متكي على الكنبة
             </h2>
@@ -25,7 +25,7 @@
         </div>
     </section>
 
-    <main class="main wd__80">
+    <main class="main maxWidth">
         <section class="ads">
             <div class="ads__row">
                 <div class="ads__title">

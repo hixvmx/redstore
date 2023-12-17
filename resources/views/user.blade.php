@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <main class="main wd__80">
+    <main class="main maxWidth">
         <div class="user__page">
             <div class="user__info">
                 <div class="informations">

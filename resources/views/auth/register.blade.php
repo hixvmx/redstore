@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    <main class="main wd__80">
+    <main class="main maxWidth">
         <div class="main__header">
             <a href="/">الرئيسية</a>
             <span>-</span>

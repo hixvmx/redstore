@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    <main class="main wd__80">
+    <main class="main maxWidth">
         <div class="newad__page">
             <div class="new__ad__header">
                 <h2>أضف إعلان جديد</h2>

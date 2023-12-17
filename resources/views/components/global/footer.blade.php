@@ -1,5 +1,5 @@
 <footer>
-    <div class="footer wd__80 grid">
+    <div class="footer maxWidth grid">
         <div class="about__site">
             <a href="#">
                 <img src="/image/logo.png" alt="" />

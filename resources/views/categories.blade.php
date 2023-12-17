@@ -9,7 +9,7 @@
 @section('content')
     @if (count($categories) > 0)
     <section class="categories">
-        <div class="categories__row wd__80">
+        <div class="categories__row maxWidth">
             <div class="categories__title">
                 <h2>التصنيفات</h2>
             </div>

@@ -10,7 +10,7 @@
 
 ?>
 <header>
-    <div class="header wd__80 flex aic__jcs ">
+    <div class="header maxWidth flex aic__jcs ">
         <ul class="header__ul flex aic">
             @if ($authCheck)
                 <li class="header__li">

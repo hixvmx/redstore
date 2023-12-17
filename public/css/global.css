@@ -121,11 +121,7 @@ input, select, option, textarea {
     min-height: 60vh;
 }
 
-.wd__100 {
-    width: 100%;
-}
-
-.wd__80 {
+.maxWidth {
     width: 80%;
     margin: auto;
 }
@@ -173,16 +169,16 @@ input, select, option, textarea {
 
 /* #############  Media Sizes  ############# */
 @media only screen and (max-width: 1200px) {
-    .wd__80{width:85%;}
+    .maxWidth{width:85%;}
 }
 @media only screen and (max-width: 1000px) {
-    .wd__80{width:90%;}
+    .maxWidth{width:90%;}
 }
 @media only screen and (max-width: 900px) {
-	.wd__80{width:95%;}
+	.maxWidth{width:95%;}
 }
 @media only screen and (max-width: 768px) {
-	.wd__80{width:100%;}
+	.maxWidth{width:100%;}
     .main{padding: 0px 10px;}
 }
 @media only screen and (max-width: 600px) {

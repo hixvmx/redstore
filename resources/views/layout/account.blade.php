@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-    <main class="main wd__80">
+    <main class="main maxWidth">
 
         @yield('pg_source')
 
