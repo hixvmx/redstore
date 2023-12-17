@@ -6,6 +6,11 @@
 }
 
 /* User Informations */
+.user__info {
+    position: sticky;
+    top: 1rem;
+}
+
 .informations {
     background-color: var(--bg-color-secondary);
     padding: 1rem;
