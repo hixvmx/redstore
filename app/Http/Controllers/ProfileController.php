@@ -17,7 +17,7 @@ class ProfileController extends Controller
         
         $ads = Ad::where('publisher', $user->id)
         ->latest()
-        ->get();
+        ->paginate(21);
 
         return view('user', compact('user','ads'));
     }

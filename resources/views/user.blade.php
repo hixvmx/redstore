@@ -115,12 +115,18 @@
                         </div>
                     @endif
                 </div>
+
+                {{-- Pagination --}}
+                @if ($ads->lastPage() > 1)
+                    <div class="pagination">
+                        <ul>
+                            <li><a href="{{$ads->previousPageUrl()}}"><div>السابق</div></a></li>
+                            <li><a href="{{$ads->nextPageUrl()}}"><div>التالي</div></a></li>
+                        </ul>
+                        <span>الصفحة رقم {{$ads->currentPage()}} من أصل {{$ads->lastPage()}}</span>
+                    </div>
+                @endif
             </div>
         </div>
     </main>
-    
-    <script>
-        var userData = @json($user);
-        console.log(userData);
-    </script>
 @endsection
