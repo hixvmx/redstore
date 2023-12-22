@@ -17,7 +17,7 @@ class AccountController extends Controller
     public function ShowAdsPage() {
         $authUserId = Auth::user()->id;
 
-        $ads = Ad::where('publisher', $authUserId)->latest()->get();
+        $ads = Ad::where('publisher', $authUserId)->latest()->paginate(20);
 
         return view('account/ads', compact('ads'));
     }

@@ -20,7 +20,6 @@
         </div>
         <div class="ads__row">
             <div class="ads__slide grid">
-
                 @foreach ($ads as $ad)
                     <div class="ad">
                         <div class="ad__row">
@@ -81,4 +80,15 @@
             </div>
         </div>
     </div>
+
+    {{-- Pagination --}}
+    @if ($ads->lastPage() > 1)
+        <div class="pagination">
+            <ul>
+                <li><a href="{{$ads->previousPageUrl()}}"><div>السابق</div></a></li>
+                <li><a href="{{$ads->nextPageUrl()}}"><div>التالي</div></a></li>
+            </ul>
+            <span>الصفحة رقم {{$ads->currentPage()}} من أصل {{$ads->lastPage()}}</span>
+        </div>
+    @endif
 @endsection
