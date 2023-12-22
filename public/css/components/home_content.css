@@ -168,6 +168,50 @@
 }
 
 
+/* Countries */
+.countries {
+    margin: 4rem 0;
+}
+
+.countries__header {
+    margin: 6px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.countries__header a:hover {
+    color: var(--first-color);
+}
+
+.countries__list {
+    background: var(--bg-color-secondary);
+    border-radius: 4px;
+    padding: 1.5rem 1rem;
+    cursor: context-menu;
+}
+
+.countries__list a {
+    display: inline-block;
+    margin: 10px 8px;
+}
+
+.country {
+    border-radius: 20px;
+    padding: 6px 1rem;
+    background: var(--bg-color-primary);
+    box-shadow: 2px 2px 7px 0px rgb(0 0 0 / 15%);
+}
+
+.country span {
+    white-space: nowrap;
+}
+
+.country:hover {
+    background: var(--first-color);
+    color: #ffffff;
+}
+
 
 /* #############  Media Sizes  ############# */
 @media only screen and (max-width: 1400px) {

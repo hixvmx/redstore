@@ -69,5 +69,20 @@
                 </div>
             </div>
         </section>
+
+        {{-- Countries --}}
+        <section class="countries">
+            <div class="countries__header">
+                <h2>الدول :</h2>
+                <a href="/">المزيد</a>
+            </div>
+            <div class="countries__list">
+                <a href="/">
+                    <div class="country">
+                        <span>Country Name</span>
+                    </div>
+                </a>
+            </div>
+        </section>
     </main>
 @endsection
