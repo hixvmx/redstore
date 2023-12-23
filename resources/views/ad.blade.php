@@ -34,7 +34,7 @@
         </div>
 
         <div class="ad">
-            <div class="ad__row flex">
+            <div class="ad__row">
                 <div class="ad__article">
                     <div class="ad__images">
                         <div class="images__row">

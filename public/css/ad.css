@@ -1,7 +1,9 @@
-.ad{margin: 2rem 0;}
-.ad__article {width: 70%;margin-left: 20px;}
-.ad__aside   {width: 30%;}
-
+.ad__row {
+    margin: 3rem 0;
+    display: grid;
+    grid-template-columns: 1fr 450px;
+    grid-gap: 1rem;
+}
 
 .preview {
     display: none;
@@ -307,7 +309,14 @@
 }
 
 @media only screen and (max-width: 1000px) {
-    
+    .ad__row {
+        margin: 1rem 0;
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+    }
+    .share__page__row {
+        padding: 1rem;
+    }
 }
 
 @media only screen and (max-width: 900px) {
