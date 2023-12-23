@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/components/home_content.css') }}" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <script src="{{ asset('js/useAxios.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 @endsection
 
 @section('content')
@@ -55,7 +56,6 @@
                                             <span>{{ $ad->created_at['date'] }}</span>
                                         </div>
                                     </div>
-                                    @if (Auth::check())
                                     <button onclick="addToMyFavorites({{ $ad->id }})" class="favorite__btn"><svg viewBox="0 0 24 24" fill="none">
                                             <g stroke-width="0"></g>
                                             <g stroke-linecap="round" stroke-linejoin="round"></g>
@@ -65,7 +65,6 @@
                                                     stroke-width="2"></path>
                                             </g>
                                         </svg></button>
-                                    @endif
                                 </div>
                             </div>
                         @endforeach
@@ -74,7 +73,7 @@
             </div>
         </section>
     </main>
-    
+
     <script>
         var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
@@ -89,7 +88,7 @@
                 const data = await response.data;
 
                 if (data.status == 1) {
-                    alert('Success!');
+                    swal("", "تمت إضافة الإعلان إلى المفضلة بنجاح.", "success");
                 }
 
             } catch (error) {
@@ -98,6 +97,13 @@
         }
 
         function addToMyFavorites(id) {
+            var isAuthenticated = @json(Auth::check());
+
+            if (!isAuthenticated) {
+                swal("", "قم بتسجيل الدخول أولاً", "error");
+                return
+            }
+
             if (id) {
                 sendRequest(id);
             }
