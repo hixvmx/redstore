@@ -77,7 +77,7 @@
 .ad__address__date .a:hover{color: var(--first-color);}
 .ad__address__date p{cursor: context-menu;}
 .ad__address__date span{cursor: context-menu;}
-.image__img {background-color: #f1f2f3;border-radius:4px;min-height: 200px;overflow: hidden;}
+.image__img {background-color: #f1f2f3;border-radius:4px;min-height: 200px;overflow: hidden;position:relative;}
 .image__img img{background-color: #f1f2f3;border-radius:4px;width: 100%;cursor: pointer;}
 .more__images {margin-top: .5rem;overflow: auto;}
 .more__images img{height:100px;border-radius: 4px;margin-left:.5rem;cursor: pointer;margin-bottom: 0.5rem;}
@@ -104,6 +104,32 @@
 .p_contact div button {background: #52b035;color: #ffffff;font-size: var(--small-font-size);padding: 10px 20px;margin-left: 8px;}
 .p_contact div p {color: var(--text-color-secondary);font-size: var(--small-font-size);}
 .p_contact div:hover {border: 1px solid #e1e1e1;}
+
+
+.favoriteBtn {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: .5rem;
+    border-radius: 50%;
+    background-color: rgb(255 255 255 / 100%);
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.favoriteBtn svg {
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+.favoriteBtn svg path {
+    stroke: var(--text-color-secondary);
+}
+
+.favoriteBtn:hover svg path {
+    stroke: var(--first-color);
+}
 
 /* share page */
 .share__page {
