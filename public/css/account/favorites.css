@@ -81,3 +81,40 @@
 .favorite__btn:hover svg path {
     stroke: var(--text-color-secondary);
 }
+
+/* Pagination */
+.pagination {
+    margin: 1rem 0 2rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination span {
+    color: var(--text-color-secondary);
+    cursor: context-menu;
+    font-size: var(--small-font-size);
+}
+
+.pagination ul {
+    cursor: context-menu;
+}
+
+.pagination ul li {
+    display: inline-block;
+}
+
+.pagination ul li div {
+    background: var(--bg-color-secondary);
+    border: 1px solid var(--border-color-primary);
+    padding: 0.3rem 1.5rem;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.pagination ul li a div {
+    color: var(--text-color-secondary);
+}
+
+.pagination ul li div:hover {
+    box-shadow: var(--shadow);
+}

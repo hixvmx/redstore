@@ -30,7 +30,7 @@ class AccountController extends Controller
         
         $FavoriteAds = collect($FavoriteAds)->pluck('ad')->toArray();
 
-        $ads = Ad::whereIn('id', $FavoriteAds)->latest()->get();
+        $ads = Ad::whereIn('id', $FavoriteAds)->latest()->paginate(25);
 
         return view('account/favorites', compact('ads'));
     }
