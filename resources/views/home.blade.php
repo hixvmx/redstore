@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="{{ asset('css/components/header.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/components/footer.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/components/home_content.css') }}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <script src="{{ asset('js/useAxios.js') }}"></script>
 @endsection
 
 @section('content')
@@ -53,7 +55,8 @@
                                             <span>{{ $ad->created_at['date'] }}</span>
                                         </div>
                                     </div>
-                                    <button class="favorite__btn"><svg viewBox="0 0 24 24" fill="none">
+                                    @if (Auth::check())
+                                    <button onclick="addToMyFavorites({{ $ad->id }})" class="favorite__btn"><svg viewBox="0 0 24 24" fill="none">
                                             <g stroke-width="0"></g>
                                             <g stroke-linecap="round" stroke-linejoin="round"></g>
                                             <g>
@@ -62,6 +65,7 @@
                                                     stroke-width="2"></path>
                                             </g>
                                         </svg></button>
+                                    @endif
                                 </div>
                             </div>
                         @endforeach
@@ -70,4 +74,33 @@
             </div>
         </section>
     </main>
+    
+    <script>
+        var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+        async function sendRequest(id) {
+            try {
+                const response = await axios.post('/addToMyFavorites', {id}, {
+                    headers : {
+                        "X-CSRF-TOKEN": csrfToken
+                    }
+                })
+
+                const data = await response.data;
+
+                if (data.status == 1) {
+                    alert('Success!');
+                }
+
+            } catch (error) {
+                //
+            }
+        }
+
+        function addToMyFavorites(id) {
+            if (id) {
+                sendRequest(id);
+            }
+        }
+    </script>
 @endsection

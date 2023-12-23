@@ -9,6 +9,7 @@ use App\Models\SubCategory;
 use App\Models\Country;
 use App\Models\City;
 use App\Models\Ad;
+use App\Models\FavoriteAd;
 use Illuminate\Support\Facades\Auth;
 use Str;
 
@@ -246,5 +247,32 @@ class AdController extends Controller
 
 
         return redirect('/');
+    }
+
+
+    public function addToMyFavorites(Request $request) {
+
+        $authUserId = Auth::user()->id;
+        $adId = $request->id;
+
+
+        $isFav = FavoriteAd::select('id')
+        ->where('user', $authUserId)
+        ->where('ad', $adId)
+        ->first();
+
+        
+        if(!$isFav) {
+            FavoriteAd::create([
+                'user' => $authUserId,
+                'ad' => $adId,
+            ]);
+        }
+
+
+        return response()->json([
+            'status' => '1',
+            'result' => 'Success',
+        ]);
     }
 }

@@ -42,6 +42,7 @@ Route::controller(AdController::class)->group(function() {
     Route::post('/update-ad', 'updateAd')->middleware('auth');
     Route::get('/delete-ad/{slug}', 'deleteAd')->middleware('auth');
     Route::post('/save-new-ad', 'saveNewAd')->middleware('auth');
+    Route::post('/addToMyFavorites', 'addToMyFavorites')->middleware('auth');
 });
 
 
