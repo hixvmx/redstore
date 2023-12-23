@@ -19,9 +19,16 @@ class AdController extends Controller
 
         $ad = Ad::where('slug', $slug)->first();
         if (!$ad) return redirect('/');
-        
 
-        return view('ad', compact('ad'));
+
+        // get more ads with the same category
+        $moreAds = Ad::where('category', $ad->category->id)
+        ->where('id', '!=', $ad->id)
+        ->limit(10)
+        ->get();
+
+
+        return view('ad', compact('ad', 'moreAds'));
     }
 
 

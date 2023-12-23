@@ -143,141 +143,41 @@
         </div>
 
         {{-- More Ads --}}
+        @if ($moreAds->count() > 0)
         <section class="s_ads">
             <div class="s_ads__row">
                 <div class="s_ads__title">
                     <h2>قد يعجبك أيضاً</h2>
                 </div>
                 <div class="s_ads__slide grid">
-                        
-                    <div class="s_ad">
-                        <div class="s_ad__row">
-                            <a href="/ad" class="href">
-                                <div class="s_ad__image">
-                                    <img src="/image/default.png" alt="" />
+                    @foreach ($moreAds as $_ad)
+                        <div class="s_ad">
+                            <div class="s_ad__row">
+                                <a href="/ad/{{ $_ad->slug }}" class="href">
+                                    <div class="s_ad__image" style="background-image: url({{$ad->image}})"></div>
+                                    <div class="s_ad__title">
+                                        <h3 title="title">{{ $_ad->title }}</h3>
+                                    </div>
+                                </a>
+                                <div class="s_ad__price">
+                                    <b>{{ $_ad->price . ' ' . $_ad->currency->name }}</b>
                                 </div>
-                                <div class="s_ad__title">
-                                    <h3 title="title">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،</h3>
+                                <div class="s_ad__footer flex aic__jcs">
+                                    <div>
+                                        <span>{{ $_ad->country->name }}</span>
+                                    </div>
+                                    <div>
+                                        <span>{{ $_ad->created_at['date'] }}</span>
+                                    </div>
                                 </div>
-                            </a>
-                            <div class="s_ad__price">
-                                <b>$30.99</b>
+                                <button onclick="addToMyFavorites({{ $_ad->id }})" class="favorite__btn"><svg viewBox="0 0 24 24" fill="none"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g><path d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z" stroke-width="2"></path></g></svg></button>
                             </div>
-                            <div class="s_ad__footer flex aic__jcs">
-                                <div>
-                                    <span>الدار البيضاء</span>
-                                </div>
-                                <div>
-                                    <span>20 أغسطس</span>
-                                </div>
-                            </div>
-                            <button class="favorite__btn"><svg viewBox="0 0 24 24" fill="none"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g><path d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z" stroke-width="2"></path></g></svg></button>
                         </div>
-                    </div>
-                        
-                    <div class="s_ad">
-                        <div class="s_ad__row">
-                            <a href="/ad" class="href">
-                                <div class="s_ad__image">
-                                    <img src="/image/default.png" alt="" />
-                                </div>
-                                <div class="s_ad__title">
-                                    <h3 title="title">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،</h3>
-                                </div>
-                            </a>
-                            <div class="s_ad__price">
-                                <b>$30.99</b>
-                            </div>
-                            <div class="s_ad__footer flex aic__jcs">
-                                <div>
-                                    <span>الدار البيضاء</span>
-                                </div>
-                                <div>
-                                    <span>20 أغسطس</span>
-                                </div>
-                            </div>
-                            <button class="favorite__btn"><svg viewBox="0 0 24 24" fill="none"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g><path d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z" stroke-width="2"></path></g></svg></button>
-                        </div>
-                    </div>
-                        
-                    <div class="s_ad">
-                        <div class="s_ad__row">
-                            <a href="/ad" class="href">
-                                <div class="s_ad__image">
-                                    <img src="/image/default.png" alt="" />
-                                </div>
-                                <div class="s_ad__title">
-                                    <h3 title="title">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،</h3>
-                                </div>
-                            </a>
-                            <div class="s_ad__price">
-                                <b>$30.99</b>
-                            </div>
-                            <div class="s_ad__footer flex aic__jcs">
-                                <div>
-                                    <span>الدار البيضاء</span>
-                                </div>
-                                <div>
-                                    <span>20 أغسطس</span>
-                                </div>
-                            </div>
-                            <button class="favorite__btn"><svg viewBox="0 0 24 24" fill="none"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g><path d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z" stroke-width="2"></path></g></svg></button>
-                        </div>
-                    </div>
-                        
-                    <div class="s_ad">
-                        <div class="s_ad__row">
-                            <a href="/ad" class="href">
-                                <div class="s_ad__image">
-                                    <img src="/image/default.png" alt="" />
-                                </div>
-                                <div class="s_ad__title">
-                                    <h3 title="title">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،</h3>
-                                </div>
-                            </a>
-                            <div class="s_ad__price">
-                                <b>$30.99</b>
-                            </div>
-                            <div class="s_ad__footer flex aic__jcs">
-                                <div>
-                                    <span>الدار البيضاء</span>
-                                </div>
-                                <div>
-                                    <span>20 أغسطس</span>
-                                </div>
-                            </div>
-                            <button class="favorite__btn"><svg viewBox="0 0 24 24" fill="none"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g><path d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z" stroke-width="2"></path></g></svg></button>
-                        </div>
-                    </div>
-                        
-                    <div class="s_ad">
-                        <div class="s_ad__row">
-                            <a href="/ad" class="href">
-                                <div class="s_ad__image">
-                                    <img src="/image/default.png" alt="" />
-                                </div>
-                                <div class="s_ad__title">
-                                    <h3 title="title">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،</h3>
-                                </div>
-                            </a>
-                            <div class="s_ad__price">
-                                <b>$30.99</b>
-                            </div>
-                            <div class="s_ad__footer flex aic__jcs">
-                                <div>
-                                    <span>الدار البيضاء</span>
-                                </div>
-                                <div>
-                                    <span>20 أغسطس</span>
-                                </div>
-                            </div>
-                            <button class="favorite__btn"><svg viewBox="0 0 24 24" fill="none"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g><path d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z" stroke-width="2"></path></g></svg></button>
-                        </div>
-                    </div>
-                    
+                    @endforeach
                 </div>
             </div>
         </section>
+        @endif
     </main>
 
     <script>

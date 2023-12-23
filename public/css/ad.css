@@ -205,9 +205,14 @@
     overflow: hidden;
 }
 
-.s_ad__image img {
+.s_ad__image {
+    background-color: var(--bg-color-primary);
     border-radius: 4px;
     width: 100%;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
 }
 
 .s_ad__title {
@@ -261,7 +266,7 @@
     right: -2rem;
     padding: .5rem;
     border-radius: 50%;
-    background-color: rgb(255 255 255 / 70%);
+    background-color: rgb(255 255 255 / 100%);
     box-shadow: var(--shadow);
     transition: 0.3s;
     opacity: 0;
@@ -277,10 +282,6 @@
     stroke: var(--text-color-secondary);
 }
 
-.favorite__btn:hover {
-    background-color: rgb(255 255 255 / 100%);
-}
-
 .favorite__btn:hover svg path {
     stroke: var(--first-color);
 }
@@ -289,4 +290,42 @@
     opacity: 1;
     top: 1rem;
     right: 1rem;
+}
+
+
+/* #############  Media Sizes  ############# */
+@media only screen and (max-width: 1400px) {
+    .s_ads__slide {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .s_ad__image {
+        height: 150px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+}
+
+@media only screen and (max-width: 1000px) {
+    
+}
+
+@media only screen and (max-width: 900px) {
+    .favorite__btn {
+        opacity: 1;
+        top: 1rem;
+        right: 1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .s_ads__slide {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .s_ad__image {
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
 }
