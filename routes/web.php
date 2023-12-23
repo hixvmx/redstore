@@ -43,6 +43,7 @@ Route::controller(AdController::class)->group(function() {
     Route::get('/delete-ad/{slug}', 'deleteAd')->middleware('auth');
     Route::post('/save-new-ad', 'saveNewAd')->middleware('auth');
     Route::post('/addToMyFavorites', 'addToMyFavorites')->middleware('auth');
+    Route::post('/removeFromMyFavorites', 'removeFromMyFavorites')->middleware('auth');
 });
 
 

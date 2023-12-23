@@ -275,4 +275,20 @@ class AdController extends Controller
             'result' => 'Success',
         ]);
     }
+
+
+    public function removeFromMyFavorites(Request $request) {
+
+        $authUserId = Auth::user()->id;
+        $adId = $request->id;
+
+
+        FavoriteAd::where('user', $authUserId)->where('ad', $adId)->delete();
+
+
+        return response()->json([
+            'status' => '1',
+            'result' => 'Success',
+        ]);
+    }
 }
