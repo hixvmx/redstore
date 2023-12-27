@@ -67,7 +67,6 @@
 @media only screen and (max-width: 900px) {
 }
 @media only screen and (max-width: 768px) {
-    .categories {padding: 0 1rem;}
     .show__categories {grid-template-columns: repeat(2, 1fr);}
 }
 @media only screen and (max-width: 500px) {
