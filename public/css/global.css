@@ -153,6 +153,9 @@ input, select, option, textarea {
     display: flex;
     align-items: center;
     padding: 1rem 0;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 .main__header a, .main__header span {
