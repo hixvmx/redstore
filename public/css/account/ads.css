@@ -160,3 +160,25 @@
 .pagination ul li div:hover {
     box-shadow: var(--shadow);
 }
+
+
+/* #############  Media Sizes  ############# */
+@media only screen and (max-width: 1200px) {
+}
+@media only screen and (max-width: 1024px) {
+}
+@media only screen and (max-width: 900px) {
+    .ads__slide {grid-template-columns: repeat(1, 1fr);}
+    .ad__statics {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    .ad__image {
+        width: 80px;
+        height: 80px;
+    }
+}
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 500px) {
+}
