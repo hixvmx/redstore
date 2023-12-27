@@ -44,14 +44,20 @@
                                     <b>{{ $ad->currency->name .' '. $ad->price }}</b>
                                 </div>
                                 <div class="ad__address__date">
-                                    <p>بتاريخ :</p>
-                                    <a>{{ $ad->created_at['date'] }}</a>
+                                    <p>
+                                        بتاريخ :
+                                        <a>{{ $ad->created_at['date'] }}</a>
+                                    </p>
                                     <span>.</span>
-                                    <p>الدولة :</p>
-                                    <a href="/search?country={{ $ad->country->id }}" class="a">{{ $ad->country->name }}</a>
+                                    <p>
+                                        الدولة :
+                                        <a href="/search?country={{ $ad->country->id }}" class="a">{{ $ad->country->name }}</a>
+                                    </p>
                                     <span>.</span>
-                                    <p>المدينة :</p>
-                                    <a href="/search?country={{ $ad->country->id }}&city={{ $ad->city->id }}" class="a">{{ $ad->city->name }}</a>
+                                    <p>
+                                        المدينة : 
+                                        <a href="/search?country={{ $ad->country->id }}&city={{ $ad->city->id }}" class="a">{{ $ad->city->name }}</a>
+                                    </p>
                                 </div>
                             </div>
                             <div class="image__img">

@@ -70,15 +70,16 @@
 
 .images__row {background-color: var(--bg-color-secondary);padding: 1rem 1rem 0.5rem 1rem;border-radius:4px;}
 .ad__info{padding-bottom: 15px;padding-top: 5px;}
+.title__price {align-items: flex-start;}
 .title__price h3{font-size: var(--h3-font-size);}
-.title__price b{color: var(--first-color);cursor: context-menu;font-size: var(--h3-font-size);}
-.ad__address__date {display: flex;cursor: context-menu;margin-top: 10px;}
-.ad__address__date p{margin-left: 4px;color: rgba(156,163,175,1);}
-.ad__address__date a,.ad__address__date span{margin-left: 12px;color: rgba(156,163,175,1);}
+.title__price b{color: var(--first-color);cursor: context-menu;font-size: var(--h3-font-size);white-space: nowrap;}
+.ad__address__date {cursor: context-menu;margin-top: 10px;line-height: normal;}
+.ad__address__date p{display: inline-block;color: rgba(156,163,175,1);white-space: nowrap;}
+.ad__address__date p a, .ad__address__date span{color: rgba(156,163,175,1);}
 .ad__address__date .a{text-decoration: underline;}
 .ad__address__date .a:hover{color: var(--first-color);}
 .ad__address__date p{cursor: context-menu;}
-.ad__address__date span{cursor: context-menu;}
+.ad__address__date span{cursor: context-menu;margin: 0 10px;}
 .image__img {background-color: #f1f2f3;border-radius:4px;min-height: 200px;overflow: hidden;position:relative;}
 .image__img img{background-color: #f1f2f3;border-radius:4px;width: 100%;cursor: pointer;}
 .more__images {margin-top: .5rem;overflow: auto;}
