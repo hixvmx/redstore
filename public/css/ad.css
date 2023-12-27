@@ -317,6 +317,7 @@
     .share__page__row {
         padding: 1rem;
     }
+    .image__img {min-height: 100px;}
 }
 
 @media only screen and (max-width: 900px) {
