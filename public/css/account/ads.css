@@ -177,6 +177,9 @@
         width: 80px;
         height: 80px;
     }
+    .editBtn {
+        display: block;
+    }
 }
 @media only screen and (max-width: 768px) {
 }
