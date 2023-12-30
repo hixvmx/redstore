@@ -10,5 +10,6 @@ Route::prefix('/dashboard')->middleware(['auth','admin'])->group(function() {
         Route::get('/ads', 'show_ads');
         Route::get('/categories', 'show_categories');
         Route::get('/countries', 'show_countries');
+        Route::delete('/deleteAd/{id}', 'deleteAd');
     });
 });

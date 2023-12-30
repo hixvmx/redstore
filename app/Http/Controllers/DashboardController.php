@@ -60,4 +60,18 @@ class DashboardController extends Controller
         
         return view('dashboard/ads', compact('ads'));
     }
+
+    public function deleteAd(string $id) {
+        if (!$id){
+            return null;
+        }
+
+        // Get Ad
+        Ad::where('id',$id)->delete();
+
+        return response()->json([
+            'status' => '1',
+            'result' => 'Success',
+        ]);
+    }
 }
