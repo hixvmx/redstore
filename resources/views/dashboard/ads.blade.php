@@ -20,7 +20,6 @@
                         <th>التصنيف الفرعي</th>
                         <th>الدولة</th>
                         <th>المدينة</th>
-                        <th>عدد المشاهدات</th>
                         <th>الناشر</th>
                         <th>تاريخ النشر</th>
                         <th></th>
@@ -39,7 +38,6 @@
                                 <td>{{$ad->sub_category ? $ad->sub_category->name : '#'}}</td>
                                 <td>{{$ad->country ? $ad->country->name : '#'}}</td>
                                 <td>{{$ad->city ? $ad->city->name : '#'}}</td>
-                                <td>##</td>
                                 <td>
                                     @if ($ad->publisher)
                                         <div class="user__data" onclick="window.open('/user/{{$ad->publisher->username}}', '_blank')">
