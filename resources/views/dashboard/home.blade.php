@@ -11,38 +11,33 @@
             <h2>الإحصائيات</h2>
         </div>
         <div class="db__body">
-            <div class="db__body__header">
-                <ul>
-                    <li>
-                        <label>
-                            <b>12,877</b>
-                            <span>الزيارات</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <b>959</b>
-                            <span>الإعلانات</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <b>159</b>
-                            <span>الحسابات</span>
-                        </label>
-                    </li>
-                </ul>
+            <div class="stats">
+                <div class="stat">
+                    <strong>19.245</strong>
+                    <span>الحسابات</span>
+                </div>
+                <div class="stat">
+                    <strong>103.245</strong>
+                    <span>الإعلانات</span>
+                </div>
             </div>
-            <div class="db__body__content">
-                
-                <div class="col-md-10 offset-md-1">
+
+            <div class="charts__content">
+                <div class="chart">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <canvas id="canvas" height="280" width="600"></canvas>
+                            <canvas id="usersCanvas" height="280" width="600"></canvas>
                         </div>
                     </div>
                 </div>
-                
+
+                <div class="chart">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <canvas id="adsCanvas" height="280" width="600"></canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -51,18 +46,21 @@
     <script>
 
         var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        var ctx1 = document.getElementById("usersCanvas").getContext("2d");
+        var ctx2 = document.getElementById("adsCanvas").getContext("2d");
 
-        var reportsData = {
+        var usersReportsData = {
             labels: months,
             datasets: [{
                 label: 'User',
                 backgroundColor: "#acc0e5",
                 data: ['50','43','47','21','43','17','21','43','55','44','2','25'],
-            },{
-                label: 'Visits',
-                backgroundColor: "#ace5ac",
-                data: ['43','57','64','16','33','08','17','26','41','45','21','1'],
-            },{
+            }]
+        };
+
+        var adsReportsData = {
+            labels: months,
+            datasets: [{
                 label: 'Ads',
                 backgroundColor: "#e5acac",
                 data: ['19','32','11','01','2','35','46','19','6','54','28','9'],
@@ -70,10 +68,30 @@
         };
 
         window.onload = function() {
-            var ctx = document.getElementById("canvas").getContext("2d");
-            window.myBar = new Chart(ctx, {
+            // Users
+            window.myBar = new Chart(ctx1, {
                 type: 'bar',
-                data: reportsData,
+                data: usersReportsData,
+                options: {
+                    elements: {
+                        rectangle: {
+                            borderWidth: 0,
+                            borderColor: '#eee',
+                            borderSkipped: 'bottom'
+                        }
+                    },
+                    responsive: true,
+                    title: {
+                        display: false,
+                        text: ''
+                    }
+                }
+            });
+            
+            // Ads
+            window.myBar = new Chart(ctx2, {
+                type: 'bar',
+                data: adsReportsData,
                 options: {
                     elements: {
                         rectangle: {
