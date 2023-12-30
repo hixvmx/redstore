@@ -13,11 +13,11 @@
         <div class="db__body">
             <div class="stats">
                 <div class="stat">
-                    <strong>19.245</strong>
+                    <strong>{{$total_users}}</strong>
                     <span>الحسابات</span>
                 </div>
                 <div class="stat">
-                    <strong>103.245</strong>
+                    <strong>{{$total_ads}}</strong>
                     <span>الإعلانات</span>
                 </div>
             </div>
@@ -44,17 +44,19 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script>
-
-        var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
         var ctx1 = document.getElementById("usersCanvas").getContext("2d");
         var ctx2 = document.getElementById("adsCanvas").getContext("2d");
+
+        var months = @json($months);
+        var usersCounts = @json($users_counts);
+        var adsCounts = @json($ads_counts);
 
         var usersReportsData = {
             labels: months,
             datasets: [{
                 label: 'User',
                 backgroundColor: "#acc0e5",
-                data: ['50','43','47','21','43','17','21','43','55','44','2','25'],
+                data: usersCounts,
             }]
         };
 
@@ -63,7 +65,7 @@
             datasets: [{
                 label: 'Ads',
                 backgroundColor: "#e5acac",
-                data: ['19','32','11','01','2','35','46','19','6','54','28','9'],
+                data: adsCounts,
             }]
         };
 

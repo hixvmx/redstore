@@ -10,13 +10,41 @@ use App\Models\City;
 use App\Models\User;
 use App\Models\Ad;
 use DB;
+use Carbon\Carbon;
 
 
 class DashboardController extends Controller
 {
     public function show_home()
     {
-        return view('dashboard/home');
+        $total_users = User::count();
+        $total_ads = Ad::count();
+
+        $today = Carbon::now();
+        $startOfMonth = $today->copy()->startOfMonth();
+
+        $today = Carbon::now();
+        $startOfMonth = $today->copy()->startOfMonth();
+
+        $months = [];
+        $usersData = [];
+        $adsData = [];
+
+        for ($i = 0; $i < 12; $i++) {
+            $startDate = $startOfMonth->copy()->subMonths($i);
+            $endDate = $startDate->copy()->endOfMonth();
+
+            $months[] = $startDate->format('F');
+            
+            $usersData[] = User::whereBetween('created_at', [$startDate, $endDate])->count();
+            $adsData[] = Ad::whereBetween('created_at', [$startDate, $endDate])->count();
+        }
+
+        $months = $months;
+        $users_counts = $usersData;
+        $ads_counts = $adsData;
+
+        return view('dashboard/home', compact('total_users','total_ads','months','users_counts','ads_counts'));
     }
 
     public function show_accounts()
