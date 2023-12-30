@@ -65,12 +65,6 @@
                                                 <a href="{{ url('sub-category/' . $ad->sub_category->slug) }}">{{ $ad->sub_category->name }}</a>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div>
-                                                <p>عدد المشاهدات :</p>
-                                                <span>312K</span>
-                                            </div>
-                                        </li>
                                     </ul>
                                 </div>
                             </div>
