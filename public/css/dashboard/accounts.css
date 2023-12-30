@@ -73,64 +73,23 @@
     font-family: system-ui;
 }
 
-.settings__dropdown {
-    width: fit-content;
-    position: relative;
-}
-
-.dropdown__btn {
-    background-color: transparent;
-    padding: 4px;
-    border-radius: 50%;
+.deleteBtn {
+    background-color: var(--first-color);
+    border: 2px solid var(--first-color);
+    padding: 6px;
+    border-radius: 8px;
     display: flex;
 }
 
-.dropdown__btn svg {
+.deleteBtn svg {
     width: 22px;
     height: 22px;
-    fill: var(--text-color-secondary);
+    fill: #fff;
     vertical-align: middle;
 }
 
-.dropdown__btn:hover svg {
-    fill: var(--text-color-primary);
-}
-
-#accounts tr:hover .dropdown__btn {
-    background-color: #f1f2f3;
-}
-
-.dropdown__menu {
-    display: none;
-    position: absolute;
-    left: 0;
-    z-index: 1;
-}
-
-.dropdown__menu__body {
-    background-color: var(--bg-color-secondary);
-    box-shadow: var(--shadow);
-    padding: 8px;
-    border-radius: 4px;
-    width: 200px;
-    max-height: 70vh;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.dropdown__menu__body button {
-    padding: 0.4rem;
-    border-radius: 4px;
-    color: var(--text-color-secondary);
-}
-
-.dropdown__menu__body button:hover {
-    background-color: var(--bg-color-primary);
-}
-
-.settings__dropdown:hover .dropdown__menu {
-    display: block;
+.deleteBtn:hover {
+    opacity: 0.9;
 }
 
 /* Pagination */
