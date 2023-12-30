@@ -75,9 +75,11 @@
         
         <section class="dashboard__section">
             <header class="dashboard__header">
-                <button class="showOrHideAsideBarBtn">
-                    <svg viewBox="0 0 24 24"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g> <rect x="3" y="17" width="18" height="2" rx="1" ry="1"></rect> <rect x="3" y="11" width="18" height="2" rx="1" ry="1"></rect> <rect x="3" y="5" width="18" height="2" rx="1" ry="1"></rect> </g></svg>
-                </button>
+                <div class="">
+                    <button class="showOrHideAsideBarBtn" onclick="showOrHideAsideBar()">
+                        <svg viewBox="0 0 24 24"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g> <rect x="3" y="17" width="18" height="2" rx="1" ry="1"></rect> <rect x="3" y="11" width="18" height="2" rx="1" ry="1"></rect> <rect x="3" y="5" width="18" height="2" rx="1" ry="1"></rect> </g></svg>
+                    </button>
+                </div>
 
                 <div class="header__user__dropdown">
                     <div class="img__icon">
@@ -134,6 +136,16 @@
                 @yield('content')
             </div>
         </section>
+
+        <div class="bg" onclick="showOrHideAsideBar()"></div>
     </main>
+
+    <script>
+        function showOrHideAsideBar() {
+            var dashboardMain = document.querySelector(".dashboard__main");
+            var className = 'showAsideBar';
+            dashboardMain.classList.toggle(className);
+        }
+    </script>
 </body>
 </html>
