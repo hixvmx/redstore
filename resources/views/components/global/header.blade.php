@@ -116,7 +116,7 @@
         </ul>
         <div class="header__logo">
             <a href="/">
-                <img src="/image/logo.png" alt="" />
+                <img src="/image/logo.png" alt="website logo" />
             </a>
         </div>
     </div>
