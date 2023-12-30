@@ -11,5 +11,6 @@ Route::prefix('/dashboard')->middleware(['auth','admin'])->group(function() {
         Route::get('/categories', 'show_categories');
         Route::get('/countries', 'show_countries');
         Route::delete('/deleteAd/{id}', 'deleteAd');
+        Route::delete('/deleteUser/{id}', 'deleteUser');
     });
 });

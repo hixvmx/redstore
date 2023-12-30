@@ -74,4 +74,18 @@ class DashboardController extends Controller
             'result' => 'Success',
         ]);
     }
+
+    public function deleteUser(string $id) {
+        if (!$id){
+            return null;
+        }
+
+        // Get User
+        User::where('id',$id)->delete();
+
+        return response()->json([
+            'status' => '1',
+            'result' => 'Success',
+        ]);
+    }
 }
