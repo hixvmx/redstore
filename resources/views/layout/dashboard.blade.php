@@ -20,6 +20,7 @@
 </head>
 <body>
     <main class="dashboard__main">
+        <div class="">
         <aside class="dashboard__aside">
             <div class="aside__logo">
                 <img src="/image/logo.png" alt="website logo" />
@@ -72,7 +73,7 @@
                 </a>
             </div>
         </aside>
-        
+    </div>
         <section class="dashboard__section">
             <header class="dashboard__header">
                 <div class="">

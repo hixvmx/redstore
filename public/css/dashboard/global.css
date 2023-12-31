@@ -1,7 +1,14 @@
 .dashboard__main {
-    display: grid;
-    grid-template-columns: 250px 1fr;
+    display: flex;
     background-color: var(--bg-color-primary);
+}
+
+.dashboard__aside {
+    width: 250px;
+}
+
+.dashboard__section {
+    width: 100%;
 }
 
 /* ################################################################### Aside ################################################################### */
@@ -13,6 +20,7 @@
     overflow-y: auto;
     background-color: var(--bg-color-secondary);
     border-left: 1px solid var(--border-color-primary);
+    display: block;
 }
 
 .aside__logo {
@@ -84,10 +92,6 @@
     padding: 0.7rem 1rem;
     background-color: var(--bg-color-secondary);
     border-bottom: 1px solid var(--border-color-primary);
-}
-
-.showOrHideAsideBarBtn {
-    display: none;
 }
 
 .showOrHideAsideBarBtn svg {
@@ -205,39 +209,41 @@
 
 .bg {
     display: none;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 110;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    background-color: rgb(0 0 0 / 80%);
+}
+
+.showAsideBar .dashboard__aside {
+    display: none;
 }
 
 
 
 /* #############  Media Sizes  ############# */
+@media only screen and (max-width: 1000px) {
+    .dashboard__countainer {
+        padding: 2rem 0rem;
+    }
+}
+
 @media only screen and (max-width: 800px) {
-    .showOrHideAsideBarBtn {
-        display: block;
-    }
-    .dashboard__main {
-        grid-template-columns: 1fr;
-        grid-gap: 0;
-    }
     .dashboard__aside {
-        width: 300px;
         position: fixed;
         z-index: 111;
-        right: -300px;
+        right: 0;
         top: 0;
+        display: none;
     }
     .showAsideBar .dashboard__aside {
-        right: 0px;
+        display: block;
     }
     .showAsideBar .bg {
         display: block;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background-color: rgb(0 0 0 / 60%);
-        z-index: 110;
-        cursor: pointer;
-    }
-    .dashboard__countainer {
-        padding: 2rem 0rem;
     }
 }
