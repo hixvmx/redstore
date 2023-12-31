@@ -16,14 +16,14 @@ class RedirectIfNotAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->isAdmin !== 1)
+        if (Auth::user()->isAdmin == 1)
         {
-            return response()->json([
-                "error" => true,
-                "message" => "You_Do_Not_Have_Permissions_To_Access_This_Page"
-            ], 404);
+            return $next($request);
         }
 
-        return $next($request);
+        return response()->json([
+            "error" => true,
+            "message" => "You_Do_Not_Have_Permissions_To_Access_This_Page"
+        ], 404);
     }
 }
