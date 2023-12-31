@@ -287,7 +287,7 @@
 
 
 /* #############  Media Sizes  ############# */
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1200px) {
     .ads__slide {
         grid-template-columns: repeat(2, 1fr);
     }
