@@ -73,6 +73,11 @@
 .ad {
     background-color: var(--bg-color-secondary);
     border-radius: 4px;
+    transition: 0.3s;
+}
+
+.ad:hover {
+    box-shadow: var(--shadow);
 }
 
 .ad__row {
