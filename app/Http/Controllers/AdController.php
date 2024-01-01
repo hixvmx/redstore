@@ -147,7 +147,8 @@ class AdController extends Controller
 
     public function updateAd(Request $request) {
         $request->validate([
-            'slug' => 'required|max:255',
+            'title' => 'required|max:255',
+            'id' => 'required|integer',
             'price' => 'required|integer',
             'currency' => 'required|integer',
             'category' => 'required|integer',
@@ -164,7 +165,7 @@ class AdController extends Controller
 
 
         // get ad
-        $ad = Ad::where('slug', $request->slug)->where('publisher', $authUserId)->first();
+        $ad = Ad::where('id', $request->id)->where('publisher', $authUserId)->first();
         if (!$ad) {
             return response()->json(['status' => '0', 'result' => 'لم يتم العثور على الإعلان']);
         }
@@ -202,6 +203,7 @@ class AdController extends Controller
         }
 
 
+        $ad->title = $request->title;
         $ad->price = $request->price;
         $ad->currency = $request->currency;
         $ad->category = $request->category;
@@ -226,7 +228,7 @@ class AdController extends Controller
     }
 
 
-    public function deleteAd(string $slug) {
+    public function deleteAd(string $id) {
 
         $authUserId = Auth::user()->id;
 
@@ -234,20 +236,20 @@ class AdController extends Controller
 
 
         // get ad
-        $ad = Ad::where('slug', $slug)->where('publisher', $authUserId)->first();
+        $ad = Ad::where('id', $id)->where('publisher', $authUserId)->first();
         if (!$ad) return redirect('/');
 
         
-        // remove image
-        $imageOldPath = str_replace($appUrl, '', $ad->image);
-        unlink($imageOldPath);
+        // // remove image
+        // $imageOldPath = str_replace($appUrl, '', $ad->image);
+        // unlink($imageOldPath);
 
 
-        // remove images
-        foreach ($ad->images as $img) {
-            $imagesOldPaths = str_replace($appUrl, '', $img);
-            unlink($imagesOldPaths);
-        }
+        // // remove images
+        // foreach ($ad->images as $img) {
+        //     $imagesOldPaths = str_replace($appUrl, '', $img);
+        //     unlink($imagesOldPaths);
+        // }
 
 
         $ad->delete();

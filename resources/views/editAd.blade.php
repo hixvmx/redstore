@@ -13,7 +13,7 @@
         <div class="newad__page">
             <div class="new__ad__header flex jcs">
                 <h2>تعديل الإعلان</h2>
-                <a href="/delete-ad/{{$ad->slug}}">
+                <a href="/delete-ad/{{$ad->id}}">
                     <button style="color: rgb(255 255 255);background: var(--first-color);padding: 4px 15px;border-radius: 4px;">
                         حذف الإعلان
                     </button>
@@ -22,10 +22,10 @@
 
             <div class="new__ad__body">
                 <form id="EditAdForm" method="POST" enctype="multipart/form-data">
-                    <input name="slug" id="slug" type="hidden" value="{{$ad->slug}}" />
+                    <input name="id" id="id" type="hidden" value="{{$ad->id}}" />
                     <div class="input__group">
                         <label for="title">العنوان</label>
-                        <input name="title" id="title" type="text" autocomplete="off" value="{{$ad->title}}" disabled style="cursor: no-drop" />
+                        <input name="title" id="title" type="text" autocomplete="off" value="{{$ad->title}}" />
                         <span id="title_err"></span>
                     </div>
 
@@ -133,7 +133,7 @@
 
             var formData = new FormData();
 
-            formData.append("slug", document.querySelector("#slug").value);
+            formData.append("id", document.querySelector("#id").value);
             formData.append("title", document.querySelector("#title").value);
             formData.append("price", document.querySelector("#price").value);
             formData.append("currency", document.querySelector("#currency").value);
