@@ -1,6 +1,6 @@
 @extends('layout.account')
 @section('pg_metatags')
-    <title>contact informations - redStore</title>
+    <title>بيانات الإتصال - redStore</title>
     <link rel="stylesheet" href="{{ asset('css/account/contactInformations.css') }}" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <script src="{{ asset('js/useAxios.js') }}"></script>
