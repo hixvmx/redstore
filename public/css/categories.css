@@ -17,6 +17,11 @@
     background: var(--bg-color-secondary);
     padding: 1rem;
     border-radius: 4px;
+    transition: 0.3s;
+}
+
+.category:hover {
+    box-shadow: var(--shadow);
 }
 
 .category_parent {
