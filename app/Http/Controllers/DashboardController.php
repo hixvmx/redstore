@@ -80,8 +80,10 @@ class DashboardController extends Controller
             return null;
         }
 
-        // Get User
-        User::where('id',$id)->delete();
+        
+        // Delete User
+        User::where('id',$id)->where('isAdmin', 0)->delete();
+
 
         return response()->json([
             'status' => '1',
