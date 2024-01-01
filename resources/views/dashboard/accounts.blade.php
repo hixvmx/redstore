@@ -17,7 +17,7 @@
 
             <table id="accounts">
                 <thead>
-                    <tr>
+                    <tr style="white-space: nowrap;">
                         <th>الإسم</th>
                         <th>رقم الهاتف</th>
                         <th>تاريخ الإزدياد</th>
@@ -31,7 +31,7 @@
                 <tbody>
                     @if ($users->count() > 0)
                         @foreach ($users as $user)
-                            <tr id="{{ "user__".$user->id }}">
+                            <tr id="{{ "user__".$user->id }}" style="white-space: nowrap;">
                                 <td>
                                     <div class="user__data" onclick="window.open('/user/{{$user->username}}', '_blank')">
                                         <div class="user__avatar">

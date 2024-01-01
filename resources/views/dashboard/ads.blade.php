@@ -17,7 +17,7 @@
 
             <table id="ads">
                 <thead>
-                    <tr>
+                    <tr style="white-space: nowrap;">
                         <th>العنوان</th>
                         <th>التصنيف الرئيسي</th>
                         <th>التصنيف الفرعي</th>
@@ -31,7 +31,7 @@
                 <tbody>
                     @if ($ads->count() > 0)
                         @foreach ($ads as $ad)
-                            <tr id="{{ "ad__".$ad->id }}">
+                            <tr id="{{ "ad__".$ad->id }}" style="white-space: nowrap;">
                                 <td>
                                     <div class="ad__title" onclick="window.open('/ad/{{$ad->slug}}', '_blank')">
                                         <p>{{$ad->title}}</p>
