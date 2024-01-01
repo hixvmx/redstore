@@ -1,6 +1,6 @@
 @extends('layout.dashboard')
 @section('metatags')
-    <title>Ads - RedStore</title>
+    <title>الإعلانات - redStore</title>
     <link rel="stylesheet" href="{{ asset('css/dashboard/global.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/dashboard/ads.css') }}" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />

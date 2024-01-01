@@ -1,6 +1,6 @@
 @extends('layout.dashboard')
 @section('metatags')
-    <title>Dashboard - RedStore</title>
+    <title>لوحة التحكم - redStore</title>
     <link rel="stylesheet" href="{{ asset('css/dashboard/global.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/dashboard/home.css') }}" />
 @endsection
