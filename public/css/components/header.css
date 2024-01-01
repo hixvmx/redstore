@@ -8,11 +8,19 @@ header {
 }
 
 .header__logo {
-    width: 110px;
+    height: 45px;
 }
 
-.header__li {
+.header__logo img {
+    height: 100%;
+}
+
+.ul__right .header__li {
     margin-left: 1rem;
+}
+
+.ul__left .header__li {
+    margin-right: 1rem;
 }
 
 .header__publish__btn div, .header__categories__btn div {
@@ -46,6 +54,10 @@ header {
 .btn_txt_web {display: block;}
 .btn_txt_mob {display: none;}
 
+.header__categories__btn div {
+    background-color: var(--bg-color-primary);
+}
+
 .header__categories__btn:hover span {
     color: var(--first-color);
 }
@@ -72,7 +84,7 @@ header {
     padding-top: 10px;
     display: none;
     position: absolute;
-    right: 0;
+    left: 0;
     z-index: 1;
 }
 
@@ -165,7 +177,7 @@ header {
 }
 @media only screen and (max-width: 500px) {
 	.header__logo {
-        width: 75px;
+        height: 45px;
     }
     .header__categories__btn div {
         padding: 0;

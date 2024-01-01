@@ -11,7 +11,36 @@
 ?>
 <header>
     <div class="header maxWidth flex aic__jcs ">
-        <ul class="header__ul flex aic">
+        <ul class="header__ul ul__right flex aic">
+            <li class="header__li">
+                <div class="header__logo">
+                    <a href="/">
+                        <img src="/image/logo.png" alt="website logo" />
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="header__ul ul__left flex aic__jcs">
+            <li class="header__li">
+                <div class="header__categories__btn">
+                    <a href="/categories">
+                        <div>
+                            <span>التصنيفات</span>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="header__li">
+                <div class="header__publish__btn">
+                    <a href="/new-ad">
+                        <div>
+                            <span class="btn_txt_web">انشر إعلانك</span>
+                            <span class="btn_txt_mob">نشر</span>
+                        </div>
+                    </a>
+                </div>
+            </li>
             @if ($authCheck)
                 <li class="header__li">
                     <div class="header__user__dropdown">
@@ -94,30 +123,6 @@
                     </div>
                 </li>
             @endif
-            <li class="header__li">
-                <div class="header__publish__btn">
-                    <a href="/new-ad">
-                        <div>
-                            <span class="btn_txt_web">انشر إعلانك</span>
-                            <span class="btn_txt_mob">نشر</span>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li class="header__li">
-                <div class="header__categories__btn">
-                    <a href="/categories">
-                        <div>
-                            <span>التصنيفات</span>
-                        </div>
-                    </a>
-                </div>
-            </li>
         </ul>
-        <div class="header__logo">
-            <a href="/">
-                <img src="/image/logo.png" alt="website logo" />
-            </a>
-        </div>
     </div>
 </header>
