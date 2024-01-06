@@ -160,7 +160,7 @@
                         <div class="s_ad">
                             <div class="s_ad__row">
                                 <a href="/ad/{{ $_ad->slug }}" class="href">
-                                    <div class="s_ad__image" style="background-image: url({{$ad->image}})"></div>
+                                    <div class="s_ad__image" style="background-image: url({{$_ad->image}})"></div>
                                     <div class="s_ad__title">
                                         <h3 title="title">{{ $_ad->title }}</h3>
                                     </div>
