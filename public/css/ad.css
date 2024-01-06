@@ -134,6 +134,40 @@
     stroke: var(--first-color);
 }
 
+/* Details */
+/* categories */
+.details {
+    background-color: var(--bg-color-secondary);
+    margin-top: 1rem;
+    border-radius: 4px;
+}
+
+.details__head {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(228, 228, 231, 1);
+}
+
+.details__row {
+}
+
+.detailsTable {
+    width: 100%;
+}
+
+.detailsTable tr td {
+    color: var(--text-color-primary);
+}
+
+.detailsTable tr .que {
+    color: var(--text-color-secondary);
+}
+
+.detailsTable tr td {
+    padding: 1rem;
+}
+
+
+
 /* share page */
 .share__page {
     background-color: var(--bg-color-secondary);
