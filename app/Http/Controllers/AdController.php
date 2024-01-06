@@ -11,6 +11,7 @@ use App\Models\City;
 use App\Models\Ad;
 use App\Models\FavoriteAd;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Str;
 
 class AdController extends Controller
@@ -28,7 +29,18 @@ class AdController extends Controller
         ->get();
 
 
-        return view('ad', compact('ad', 'moreAds'));
+        // get Categories
+        $categories = Category::select([
+            'id',
+            'slug',
+            'name',
+            \DB::raw("(SELECT COUNT(*) FROM ads WHERE ads.category = categories.id) as total_ads")
+        ])
+        ->orderBy('total_ads', 'desc')
+        ->get();
+
+
+        return view('ad', compact('ad', 'moreAds', 'categories'));
     }
 
 
