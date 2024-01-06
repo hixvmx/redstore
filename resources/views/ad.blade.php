@@ -111,7 +111,7 @@
                                 </tr>
                                 <tr>
                                     <td>نوع المنتج</td>
-                                    <td class="que">##</td>
+                                    <td class="que">{{ $ad->isNew ? 'جديد' : 'قديم'}}</td>
                                 </tr>
                                 <tr>
                                     <td>تاريخ النشر</td>

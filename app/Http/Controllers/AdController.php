@@ -108,6 +108,7 @@ class AdController extends Controller
             'title' => 'required|max:255',
             'price' => 'required|integer',
             'currency' => 'required|integer',
+            'type' => 'required|integer|in:0,1',
             'category' => 'required|integer',
             'sub_category' => 'required|integer',
             'country' => 'required|integer',
@@ -147,7 +148,8 @@ class AdController extends Controller
             "city" => $request->city,
             "image" => $imagePath,
             "images" => $imagesPaths,
-            "publisher" => $authUserId
+            "publisher" => $authUserId,
+            "isNew" => $request->type,
         ]);
         
         return response()->json([
@@ -167,6 +169,7 @@ class AdController extends Controller
             'sub_category' => 'required|integer',
             'country' => 'required|integer',
             'city' => 'required|integer',
+            'type' => 'required|integer|in:0,1',
         ]);
 
 
@@ -230,6 +233,7 @@ class AdController extends Controller
         {
             $ad->images = $imagesPaths;
         }
+        $ad->isNew = $request->type;
         $ad->save();
 
 

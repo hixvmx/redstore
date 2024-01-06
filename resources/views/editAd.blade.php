@@ -82,6 +82,16 @@
                         </div>
                     </div>
 
+                    <div class="input__group">
+                        <label for="type">نوع المنتج</label>
+                        <select name="type" id="type">
+                            <option value=""></option>
+                            <option value="1" {{$ad->isNew == '1' ? 'selected' : ''}}>جديد</option>
+                            <option value="0" {{$ad->isNew == '0' ? 'selected' : ''}}>قديم</option>
+                        </select>
+                        <span id="type_err"></span>
+                    </div>
+
                     <div class="choose__images__section" id="indexImageSection">
                         <label class="section__title">الصورة الرئيسية</label>
                         <div class="choose__images__body">
@@ -137,6 +147,7 @@
             formData.append("title", document.querySelector("#title").value);
             formData.append("price", document.querySelector("#price").value);
             formData.append("currency", document.querySelector("#currency").value);
+            formData.append("type", document.querySelector("#type").value);
             formData.append("category", document.querySelector("#category").value);
             formData.append("sub_category", document.querySelector("#sub_category").value);
             formData.append("country", document.querySelector("#country").value);
@@ -147,6 +158,7 @@
             document.getElementById("title_err").style.display = "none";
             document.getElementById("price_err").style.display = "none";
             document.getElementById("currency_err").style.display = "none";
+            document.getElementById("type_err").style.display = "none";
             document.getElementById("category_err").style.display = "none";
             document.getElementById("sub_category_err").style.display = "none";
             document.getElementById("country_err").style.display = "none";
@@ -163,6 +175,8 @@
             var inputs = [
                 document.querySelector("#title"),
                 document.querySelector("#price"),
+                document.querySelector("#currency"),
+                document.querySelector("#type"),
                 document.querySelector("#category"),
                 document.querySelector("#sub_category"),
                 document.querySelector("#country"),

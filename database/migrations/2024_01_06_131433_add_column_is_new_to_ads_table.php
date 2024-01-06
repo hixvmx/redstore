@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('ads', function (Blueprint $table) {
-            $table->boolean('isNew')->default(true);
+            $table->integer('isNew')->default(1);
         });
     }
 

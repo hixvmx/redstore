@@ -28,6 +28,7 @@ class Ad extends Model
         'images',
         'publisher',
         'active',
+        'isNew'
     ];
 
 
