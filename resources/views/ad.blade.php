@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('metatags')
-    <title>{{ $ad->title }} - redStore</title>
+    <title>{{ $ad->title }} - ريدسطور</title>
     <link rel="stylesheet" href="{{ asset('css/components/header.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/components/footer.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/ad.css') }}" />

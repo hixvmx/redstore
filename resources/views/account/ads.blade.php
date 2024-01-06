@@ -1,6 +1,6 @@
 @extends('layout.account')
 @section('pg_metatags')
-    <title>إعلاناتي - redStore</title>
+    <title>إعلاناتي - ريدسطور</title>
     <link rel="stylesheet" href="{{ asset('css/account/ads.css') }}" />
 @endsection
 

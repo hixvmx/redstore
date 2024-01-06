@@ -1,6 +1,6 @@
 @extends('layout.dashboard')
 @section('metatags')
-    <title>الحسابات - redStore</title>
+    <title>الحسابات - ريدسطور</title>
     <link rel="stylesheet" href="{{ asset('css/dashboard/global.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/dashboard/accounts.css') }}" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />

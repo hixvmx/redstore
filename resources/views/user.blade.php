@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('metatags')
-    <title>{{ $user->firstname .' '. $user->lastname }} - redStore</title>
+    <title>{{ $user->firstname .' '. $user->lastname }} - ريدسطور</title>
     <link rel="stylesheet" href="{{ asset('css/components/header.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/components/footer.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/user.css') }}" />

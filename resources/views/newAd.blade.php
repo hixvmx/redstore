@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('metatags')
-    <title>أضف إعلان جديد - redStore</title>
+    <title>أضف إعلان جديد - ريدسطور</title>
     <link rel="stylesheet" href="{{ asset('css/components/header.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/components/footer.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/newad.css') }}" />

@@ -1,6 +1,6 @@
 @extends('layout.account')
 @section('pg_metatags')
-    <title>إعدادات الحساب - redStore</title>
+    <title>إعدادات الحساب - ريدسطور</title>
     <link rel="stylesheet" href="{{ asset('css/account/settings.css') }}" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <script src="{{ asset('js/useAxios.js') }}"></script>
